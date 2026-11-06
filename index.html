@@ -1,0 +1,726 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#4F3F86"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="精油背誦"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png"><title>IFA 精油背誦</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=LXGW+WenKai+TC:wght@300;400;700&display=swap">
+<style>
+/* Layout: single-column phone notebook. Hand-drawn literary style: wobbly ink outlines, washi tape,
+   highlighter marks, watercolor washes on warm paper. Frames are pseudo-elements run through an SVG
+   displacement filter so text stays crisp. */
+:root{
+  --bg:#F3EDDD; --paper:#FBF7EB; --ink:#3A332B; --ink2:#6A6054; --line:#CDBFA6;
+  --accent:#6B5B9A; --wash:#DCCFF0; --sage:#CBD9B8; --rose:#F0CFC6; --mark:#F7E6A1; --tape:#BFD0C4;
+  --ok:#3D6A39; --okbg:#DCE8C8; --bad:#A3432E; --badbg:#F5D6CC;
+  --wob:255px 14px 225px 14px/14px 225px 14px 255px; --wob2:14px 225px 14px 255px/255px 14px 225px 14px;
+  --tex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .34 0 0 0 0 .24 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --squig:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='10' viewBox='0 0 120 10'%3E%3Cpath d='M2 6c6-6 10-6 16 0s10 6 16 0 10-6 16 0 10 6 16 0 10-6 16 0 10 6 16 0' fill='none' stroke='%236B5B9A' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E");
+  --f-zh:'LXGW WenKai TC','Noto Serif TC','Songti TC','PMingLiU',serif;
+  --f-hand:'Caveat','LXGW WenKai TC',cursive;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#26231F; --paper:#302C26; --ink:#F0E7D6; --ink2:#B5AA99; --line:#51493D;
+    --accent:#CDBDF4; --wash:#54467F; --sage:#44573D; --rose:#5A3B35; --mark:#6A5B22; --tape:#4B6554;
+    --ok:#A8D19E; --okbg:#34452F; --bad:#F4A48F; --badbg:#4B2B24;
+    --tex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .9 0 0 0 0 .85 0 0 0 0 .75 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    --squig:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='10' viewBox='0 0 120 10'%3E%3Cpath d='M2 6c6-6 10-6 16 0s10 6 16 0 10-6 16 0 10 6 16 0 10-6 16 0 10 6 16 0' fill='none' stroke='%23CDBDF4' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E");
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#26231F; --paper:#302C26; --ink:#F0E7D6; --ink2:#B5AA99; --line:#51493D;
+  --accent:#CDBDF4; --wash:#54467F; --sage:#44573D; --rose:#5A3B35; --mark:#6A5B22; --tape:#4B6554;
+  --ok:#A8D19E; --okbg:#34452F; --bad:#F4A48F; --badbg:#4B2B24;
+  --tex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .9 0 0 0 0 .85 0 0 0 0 .75 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  --squig:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='10' viewBox='0 0 120 10'%3E%3Cpath d='M2 6c6-6 10-6 16 0s10 6 16 0 10-6 16 0 10 6 16 0 10-6 16 0 10 6 16 0' fill='none' stroke='%23CDBDF4' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E");
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg) var(--tex);color:var(--ink);font:400 17px/1.65 var(--f-zh);-webkit-text-size-adjust:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2.5px dashed var(--accent);outline-offset:3px}
+.wrap{max-width:560px;margin:0 auto;padding-block:22px 118px;
+  padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+/* hand-drawn frames */
+.card,.stats,.streak,.btn,.chip,.slot,.spk,.seg button,.prog{position:relative;isolation:isolate}
+.card::before,.stats::before,.streak::before,.btn::before,.chip::before,.slot::before,.spk::before,.seg button::before,.prog::before{
+  content:"";position:absolute;inset:0;border:2px solid var(--ink);border-radius:var(--wob);filter:url(#rough);pointer-events:none;z-index:-1}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:20px}
+.eyebrow{font:500 20px/1.2 var(--f-hand);color:var(--ink2);display:flex;align-items:center;gap:6px}
+.eyebrow svg{width:22px;height:22px;flex:none;color:var(--accent)}
+h1{font:700 29px/1.25 var(--f-zh);margin:4px 0 0;text-wrap:balance}
+h1::after{content:"";display:block;width:120px;height:10px;background:var(--squig) no-repeat;margin-top:4px}
+h2{font:700 21px/1.3 var(--f-zh);margin:0 0 10px;text-wrap:balance}
+.streak{background:var(--mark);border-radius:var(--wob2);padding:7px 12px;font:500 17px/1.1 var(--f-zh);white-space:nowrap;transform:rotate(1.5deg);flex:none}
+.streak b{font:700 26px/1 var(--f-hand);color:var(--accent)}
+.sec{margin-top:28px}
+.muted{color:var(--ink2);font-size:15px}
+.tag{display:inline-block;font:700 14px/1.4 var(--f-zh);background:var(--sage);color:var(--ink);padding:0 9px;border-radius:var(--wob);margin-left:6px;transform:rotate(-2deg);vertical-align:2px}
+.tag.oil{background:var(--rose)}
+.btn{border:0;background:var(--wash);color:var(--ink);border-radius:var(--wob2);padding:11px 18px;font:700 18px/1.3 var(--f-zh);min-height:50px}
+.btn.ghost{background:transparent}
+.btn.block{width:100%}
+.btn:active{transform:translateY(1px) rotate(-.4deg)}
+.btn:disabled{opacity:.5;cursor:default}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.btns .btn{flex:1 1 140px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--paper);border-radius:var(--wob);margin:16px 0}
+.stat{padding:12px 8px 10px;text-align:center;border-left:2px dashed var(--line)}
+.stat:first-child{border-left:0}
+.stat b{display:block;font:700 38px/1 var(--f-hand);color:var(--accent);font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;color:var(--ink2)}
+.map{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 8px}
+.mapg{font:500 19px var(--f-hand);color:var(--ink2);margin-top:12px}
+.dot{width:17px;height:17px;border-radius:52% 48% 55% 45%/48% 55% 45% 52%;border:2px solid var(--ink2);background:transparent}
+.dot.b0{background:var(--bad);border-color:var(--bad);opacity:.8}
+.dot.b1,.dot.b2{background:var(--wash);border-color:var(--accent)}
+.dot.b3,.dot.b4{background:var(--accent);opacity:.6;border-color:var(--accent)}
+.dot.b5{background:var(--accent);border-color:var(--ink)}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--ink2)}
+.legend .dot{display:inline-block;width:12px;height:12px;margin-right:4px;vertical-align:-1px}
+.prog{height:10px;margin:0 0 18px;background:var(--paper);border-radius:var(--wob)}
+.prog i{display:block;height:100%;background:var(--wash);border-radius:var(--wob);transition:width .3s}
+/* specimen card */
+.card{background:var(--paper);border-radius:var(--wob);padding:26px 18px 18px;margin-top:14px}
+.card::after{content:"";position:absolute;top:-11px;left:50%;width:92px;height:24px;margin-left:-46px;transform:rotate(-3deg);background:var(--tape);opacity:.85;
+  clip-path:polygon(0 12%,4% 0,8% 14%,12% 2%,88% 0,92% 14%,96% 0,100% 12%,98% 50%,100% 88%,96% 100%,92% 86%,88% 100%,12% 98%,8% 86%,4% 100%,0 88%,2% 50%);z-index:3;pointer-events:none}
+.card-h{display:flex;justify-content:space-between;align-items:center;gap:10px;font:500 19px/1 var(--f-hand);color:var(--ink2)}
+.name{font:700 29px/1.3 var(--f-zh);margin:10px 0 12px;text-wrap:balance}
+.row{display:grid;grid-template-columns:86px minmax(0,1fr);gap:4px 12px;padding:13px 0;border-top:2px dashed var(--line)}
+.lab{font:400 15px/1.9 var(--f-zh);color:var(--ink2)}
+.val{min-width:0}
+.lat{font:700 32px/1.1 var(--f-hand);overflow-wrap:anywhere;letter-spacing:.01em}
+.en{font-weight:700}
+.row.ok .lab::after{content:" ✓";color:var(--ok);font-weight:700}
+.row.bad .lab::after{content:" ✗";color:var(--bad);font-weight:700}
+.fb{grid-column:2;font-size:15px;margin-top:2px}
+.row.ok .fb{color:var(--ok)}
+.row.bad .fb{color:var(--bad)}
+.fb .lat{color:var(--ink);font-size:30px}
+.pron{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:6px;font:500 21px/1.4 var(--f-hand);color:var(--ink2)}
+.pron b{color:var(--accent);font-weight:700}
+.note{font-size:14px;color:var(--ink2);margin-top:4px}
+.spk{border:0;background:var(--paper);border-radius:var(--wob2);width:38px;height:36px;display:inline-grid;place-items:center;color:var(--accent);padding:0}
+.spk svg{width:20px;height:20px}
+.spk.slow{width:auto;padding:0 10px;font:700 15px var(--f-zh);color:var(--ink)}
+input.txt{width:100%;border:0;border-bottom:2.5px solid var(--ink);background:var(--paper);border-radius:6px 8px 2px 2px;padding:9px 10px;min-height:46px}
+input.txt:focus{outline:none;border-bottom-color:var(--accent);background:linear-gradient(transparent 55%,var(--mark) 55%)}
+input.txt.latin{font:700 28px/1.2 var(--f-hand)}
+.row.ok input.txt,.row.bad input.txt{border-bottom-color:currentColor}
+.hintbtn{background:none;border:0;color:var(--accent);font-size:14px;padding:6px 0;text-decoration:underline wavy}
+.lat-boxes{display:flex;flex-direction:column;gap:6px}
+.lat-word{display:flex;gap:4px;flex-wrap:nowrap}
+.lb{flex:0 1 28px;min-width:0;height:46px;text-align:center;border:0;border-bottom:2.5px solid var(--ink);background:transparent;border-radius:0;font:700 30px/1 var(--f-hand);padding:0;display:grid;place-items:center;color:var(--ink)}
+input.lb{background:linear-gradient(transparent 50%,var(--mark) 50%);caret-color:var(--accent)}
+span.lb{border-bottom-color:transparent}
+span.lb.p{flex:0 0 auto;min-width:8px;width:auto}
+.lb.ok{color:var(--ok);border-bottom-color:var(--ok);background:none}
+.lb.bad{color:var(--bad);border-bottom:2.5px dashed var(--bad);background:none}
+.slot{width:100%;text-align:left;min-height:46px;padding:9px 14px;border:0;background:transparent;border-radius:var(--wob2);color:var(--ink2)}
+.slot::before{border-style:dashed;border-color:var(--accent)}
+.slot.filled{background:var(--mark);color:var(--ink);font-weight:700}
+.slot.filled::before{border-style:solid;border-color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:9px 8px;margin-top:12px}
+.chip{border:0;background:var(--paper);border-radius:var(--wob);padding:5px 12px;min-height:38px;font-size:16px}
+.chip::before{border-width:1.5px;border-color:var(--ink2)}
+.chip:nth-child(3n){transform:rotate(-1.2deg)}.chip:nth-child(3n+1){transform:rotate(.9deg)}
+.chip.on{background:var(--mark);font-weight:700}
+.chip.on::before{border-color:var(--ink);border-width:2px}
+.row.ok .slot{background:var(--okbg);color:var(--ink)}
+.row.bad .slot{background:var(--badbg);color:var(--ink)}
+.row.ok .slot::before{border-color:var(--ok);border-style:solid}
+.row.bad .slot::before{border-color:var(--bad);border-style:solid}
+.cue{font-size:15px;color:var(--ink2)}
+.seg{display:flex;flex-wrap:wrap;gap:9px}
+.seg button{border:0;background:var(--paper);border-radius:var(--wob);padding:5px 14px;min-height:40px;font-size:16px}
+.seg button::before{border-width:1.5px}
+.seg button.on{background:var(--wash);font-weight:700}
+.seg button.on::before{border-width:2px}
+.lvdesc{font:500 20px/1.4 var(--f-hand);color:var(--ink2);margin-top:10px}
+.sumrow{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 0;border-top:2px dashed var(--line)}
+.sumrow .lat{font-size:26px}
+.mk{font-weight:700;font-size:20px}
+.mk.ok{color:var(--ok)}.mk.bad{color:var(--bad)}
+.score{font:700 76px/1 var(--f-hand);color:var(--accent);font-variant-numeric:tabular-nums;transform:rotate(-2deg);display:inline-block;margin:6px 0}
+.find{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.find input{flex:1 1 180px}
+.find select{flex:0 1 140px;border:2px solid var(--ink);background:var(--paper);border-radius:var(--wob2);padding:8px;min-height:46px}
+.lib{border-top:2px solid var(--ink)}
+.lib-i{border-bottom:2px dashed var(--line)}
+.lib-h{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;width:100%;text-align:left;background:none;border:0;padding:10px 0}
+.lib-h .z{font-weight:700}
+.lib-h .lat{font-size:24px;display:block;color:var(--ink2)}
+.lib-b{padding:0 0 14px}
+.kv{display:grid;grid-template-columns:86px minmax(0,1fr);gap:4px 12px;font-size:16px}
+.kv dt{font-size:15px;color:var(--ink2);line-height:1.9}
+.kv dd{margin:0}
+.set{display:flex;flex-direction:column;gap:8px;padding:15px 0;border-top:2px dashed var(--line)}
+.set .l{font-weight:700;font-size:18px}
+.set textarea{width:100%;min-height:90px;border:2px solid var(--ink);background:var(--paper);border-radius:var(--wob2);padding:8px;font:13px/1.4 monospace}
+.set input[type=time]{border:2px solid var(--ink);background:var(--paper);border-radius:var(--wob2);padding:8px;min-height:46px;width:150px}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;background:var(--paper);border-top:2.5px solid var(--ink);
+  padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px))}
+nav.tabs button{flex:1;border:0;background:none;padding:6px 2px;border-radius:var(--wob);font-size:14px;color:var(--ink2);display:flex;flex-direction:column;align-items:center;gap:1px;min-height:54px}
+nav.tabs button svg{width:26px;height:26px;filter:url(#rough)}
+nav.tabs button.on{color:var(--ink);font-weight:700;background:var(--wash)}
+.toast{position:fixed;left:50%;transform:translateX(-50%) rotate(-1.5deg);bottom:calc(88px + env(safe-area-inset-bottom,0px));background:var(--mark);color:var(--ink);padding:10px 16px;border-radius:var(--wob2);font-size:15px;z-index:30;max-width:90vw;box-shadow:2px 3px 0 var(--line);border:2px solid var(--ink)}
+@media (prefers-reduced-motion:no-preference){.card{animation:in .28s ease-out}@keyframes in{from{opacity:.4;transform:translateY(6px) rotate(.4deg)}to{opacity:1;transform:none}}}
+.ref{margin-top:14px;padding:12px 14px;border:2px dashed var(--accent);border-radius:var(--wob2);background:var(--paper);font-size:16px}
+.ref h3,h3.sub{margin:0 0 4px;font:700 17px/1.4 var(--f-zh)}
+h3.sub{margin-top:16px}
+textarea.pad{width:100%;min-height:120px;border:2px solid var(--ink);background:var(--paper);border-radius:var(--wob2);padding:10px;font:inherit;line-height:1.6;resize:vertical}
+textarea.pad:focus{outline:none;border-color:var(--accent);background:linear-gradient(transparent 70%,var(--mark) 70%)}
+.ck{display:flex;gap:10px;align-items:flex-start;padding:6px 0;font-size:16px}
+.ck input{width:22px;height:22px;flex:none;margin-top:3px;accent-color:var(--accent)}
+nav.tabs button{font-size:13px}
+.oil-list{list-style:none;margin:8px 0 0;padding:0}
+.oli{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.comp{list-style:none;margin:0 0 6px;padding:0}.comp li{padding:1px 0}.comp small{color:var(--ink2);font-size:13px}
+.oil-list li{display:block;border-top:1.5px dashed var(--line);padding:4px 0;font-size:16px}
+.lat.sm{font-size:21px;color:var(--ink2);text-align:right;overflow-wrap:anywhere}
+.lvctl{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.lvctl .spk.slow{width:36px;padding:0;font-size:20px}
+.lvtxt{font-size:15px}
+.lvbadge{text-align:right}
+.lvbadge small{font-size:12px}
+</style><style>:root{padding-block:env(safe-area-inset-top,0px) env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="rough" x="-8%" y="-8%" width="116%" height="116%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.4" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+<div class="wrap" id="app"></div>
+<nav class="tabs" id="tabs" aria-label="主選單"></nav>
+
+<script>
+(function(){
+'use strict';
+const D=[{"kind": "ess", "zh": "歐洲赤松（松針）", "latin": ["Pinus sylvestris"], "en": "Pine needles (Scotch Pine)", "part": "針葉", "method": ["蒸餾"], "family": "松科", "type": "單萜烯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Pine needles (Scotch Pine)", "comp": [["α-蒎烯", "α-pinene"], ["β-蒎烯", "β-pinene"], ["δ-3-蒈烯", "δ-3-carene"], ["β-水芹烯", "β-phellandrene"], ["δ-杜松烯", "δ-cadinene"], ["樟烯", "camphene"]], "compV": true, "compNote": "aromaweb 列出之主要成分（引自 Tisserand & Young《Essential Oil Safety》），未標比例；約 90% 為單萜烯"}, {"kind": "ess", "zh": "大西洋雪松（阿特拉斯雪松）", "latin": ["Cedrus atlantica"], "en": "Atlas cedarwood", "part": "木材", "method": ["蒸餾"], "family": "松科", "type": "倍半萜烯", "note": "芳療界通常將之分為『倍半萜酮』類", "latinNote": "", "isNew": false, "id": "ess:Atlas cedarwood", "comp": [["β-喜馬雪松烯", "β-himachalene"], ["α-喜馬雪松烯", "α-himachalene"], ["γ-喜馬雪松烯", "γ-himachalene"], ["(E)-α-大西洋酮", "(E)-α-atlantone"], ["喜馬雪松醇", "himachalol"]], "compV": true, "compNote": "aromaweb 引摩洛哥大西洋雪松 2004 年分析（Aberchane & Fechtal），未標比例"}, {"kind": "ess", "zh": "黑雲杉", "latin": ["Picea mariana"], "en": "Black spruce", "part": "針葉", "method": ["蒸餾"], "family": "松科", "type": "單萜烯", "note": "", "latinNote": "", "isNew": true, "id": "ess:Black spruce", "comp": [["乙酸龍腦酯", "bornyl acetate"], ["β-蒎烯", "β-pinene"], ["α-蒎烯", "α-pinene"], ["樟烯", "camphene"]], "compV": true, "compNote": "乙酸龍腦酯約 37%、β-蒎烯約 14%、α-蒎烯約 14%（Tisserand & Young 引用資料）"}, {"kind": "ess", "zh": "杜松漿果（杜松子油）", "latin": ["Juniperus communis"], "en": "Juniper berry", "part": "漿果", "method": ["蒸餾"], "family": "柏科", "type": "單萜烯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Juniper berry", "comp": [["α-蒎烯", "α-pinene"], ["月桂烯", "β-myrcene"], ["檜烯", "sabinene"], ["檸檬烯", "limonene"], ["萜品烯-4-醇", "terpinen-4-ol"], ["β-蒎烯", "β-pinene"]], "compV": true, "compNote": "EMA 評估報告：α-蒎烯 24–55%、月桂烯 7–22%、檜烯 1.4–29%、檸檬烯 2–11%、萜品烯-4-醇 0.7–17%；比例依產地差異大"}, {"kind": "ess", "zh": "絲柏（柏樹油）", "latin": ["Cupressus sempervirens"], "en": "Cypress", "part": "針葉", "method": ["蒸餾"], "family": "柏科", "type": "單萜烯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Cypress", "comp": [["α-蒎烯", "α-pinene"], ["δ-3-蒈烯", "δ-3-carene"], ["雪松醇", "cedrol"], ["乙酸α-萜品酯", "α-terpinyl acetate"], ["萜品油烯", "terpinolene"], ["檸檬烯", "limonene"]], "compV": true, "compNote": "aromaweb 列出之主要成分（引自 Tisserand & Young《Essential Oil Safety》），未標比例"}, {"kind": "ess", "zh": "檜木", "latin": ["Chamaecyparis obtusa"], "en": "Hinoki wood", "part": "木材", "method": ["蒸餾"], "family": "柏科", "type": "倍半萜烯", "note": "", "latinNote": "", "isNew": true, "id": "ess:Hinoki wood", "comp": [["α-蒎烯", "α-pinene"], ["δ-杜松烯", "δ-cadinene"]], "compV": true, "compNote": "木材油以 α-蒎烯、δ-杜松烯為主；葉油則是檜烯、乙酸龍腦酯、乙酸萜品酯（BPB Reports 十支市售檜木油）"}, {"kind": "ess", "zh": "乳香", "latin": ["Boswellia carterii", "Boswellia sacra"], "en": "Frankincense", "part": "樹脂", "method": ["蒸餾", "CO2"], "family": "橄欖科", "type": "單萜烯", "note": "稀有物種；新增 CO2 萃取", "latinNote": "", "isNew": true, "id": "ess:Frankincense", "comp": [["α-蒎烯", "α-pinene"], ["檸檬烯", "limonene"], ["α-側柏烯", "α-thujene"], ["檜烯", "sabinene"]], "compV": true, "compNote": "一份 B. carterii GC-MS 報告：α-蒎烯約 48%、檸檬烯約 10%、α-側柏烯約 8%；乙酸辛酯含量依產地與品種差異大"}, {"kind": "ess", "zh": "藍膠尤加利（藍桉尤加利）", "latin": ["Eucalyptus globulus"], "en": "Eucalyptus, blue gum", "part": "葉", "method": ["蒸餾"], "family": "桃金孃科", "type": "氧化物", "note": "", "latinNote": "", "isNew": false, "id": "ess:Eucalyptus, blue gum", "comp": [["1,8-桉油醇", "1,8-cineole"], ["α-蒎烯", "α-pinene"], ["檸檬烯", "limonene"], ["球樟醇", "globulol"], ["反式松香芹醇", "(E)-pinocarveol"]], "compV": true, "compNote": "aromaweb 列出之主要成分（引自 Tisserand & Young《Essential Oil Safety》），未標比例；以氧化物 1,8-桉油醇為主"}, {"kind": "ess", "zh": "寬葉（薄荷）尤加利", "latin": ["Eucalyptus dives"], "en": "Eucalyptus, broad leaf", "part": "葉", "method": ["蒸餾"], "family": "桃金孃科", "type": "單萜酮", "note": "", "latinNote": "", "isNew": false, "id": "ess:Eucalyptus, broad leaf", "comp": [["胡椒酮", "piperitone"], ["α-水芹烯", "α-phellandrene"], ["球樟醇／綠花白千層醇", "globulol/viridiflorol"]], "compV": true, "compNote": "CSIRO：典型（piperitone 型）胡椒酮 40–60%、α-水芹烯 20–30%；另有 α-水芹烯型（60–80%）與 1,8-桉油醇型（68–75%）化學型，購買時留意批次"}, {"kind": "ess", "zh": "檸檬尤加利", "latin": ["Eucalyptus citriodora"], "en": "Eucalyptus, lemon", "part": "葉", "method": ["蒸餾"], "family": "桃金孃科", "type": "醛", "note": "", "latinNote": "", "isNew": false, "id": "ess:Eucalyptus, lemon", "comp": [["香茅醛", "citronellal"], ["香茅醇", "citronellol"], ["異胡薄荷醇", "isopulegol"]], "compV": true, "compNote": "aromaweb：香茅醛約 80%"}, {"kind": "ess", "zh": "茶樹", "latin": ["Melaleuca alternifolia"], "en": "Tea tree", "part": "葉", "method": ["蒸餾"], "family": "桃金孃科", "type": "單萜醇", "note": "", "latinNote": "", "isNew": false, "id": "ess:Tea tree", "comp": [["萜品烯-4-醇", "terpinen-4-ol"], ["γ-萜品烯", "γ-terpinene"], ["α-萜品烯", "α-terpinene"], ["對傘花烴", "p-cymene"], ["α-萜品醇", "α-terpineol"], ["1,8-桉油醇", "1,8-cineole"]], "compV": true, "compNote": "ISO 4730:2017 規範：萜品烯-4-醇 35–48%、γ-萜品烯 14–28%、α-萜品烯 6–12%、1,8-桉油醇 ≤10%"}, {"kind": "ess", "zh": "白千層", "latin": ["Melaleuca leucadendra"], "en": "Cajeput", "part": "葉", "method": ["蒸餾"], "family": "桃金孃科", "type": "氧化物", "note": "", "latinNote": "", "isNew": false, "id": "ess:Cajeput", "comp": [["1,8-桉油醇", "1,8-cineole"], ["α-萜品醇", "α-terpineol"], ["檸檬烯", "limonene"]], "compV": true, "compNote": "1,8-桉油醇約 43–67%、α-萜品醇約 7–18%、檸檬烯最多約 13%（廠商資料表與越南兩批 GC 結果）"}, {"kind": "ess", "zh": "綠花白千層(沉香醇)", "latin": ["Melaleuca viridiflora"], "en": "Niaouli CT. linalool", "part": "葉", "method": ["蒸餾"], "family": "桃金孃科", "type": "單萜醇", "note": "", "latinNote": "", "isNew": false, "id": "ess:Niaouli CT. linalool", "comp": [["沉香醇", "linalool"], ["橙花叔醇", "(E)-nerolidol"]], "compV": true, "compNote": "文獻中這個化學型（Nerolina）以橙花叔醇為主（約 60–95%），沉香醇由微量到約 40%（CSIRO 資料）"}, {"kind": "ess", "zh": "綠花白千層(桉油醇)", "latin": ["Melaleuca viridiflora"], "en": "Niaouli CT. cineole", "part": "葉", "method": ["蒸餾"], "family": "桃金孃科", "type": "氧化物", "note": "", "latinNote": "與同名精油同學名，差別在 CT 化學類型", "isNew": false, "id": "ess:Niaouli CT. cineole", "comp": [["1,8-桉油醇", "1,8-cineole"], ["綠花白千層醇", "viridiflorol"], ["α-萜品醇", "α-terpineol"], ["β-石竹烯", "β-caryophyllene"]], "compV": true, "compNote": "1,8-桉油醇約 10–75%、綠花白千層醇約 13–66%，各批次差異大（CSIRO 資料）"}, {"kind": "ess", "zh": "香桃木(紅/綠)", "latin": ["Myrtus communis"], "en": "Myrtle", "part": "葉", "method": ["蒸餾"], "family": "桃金孃科", "type": "氧化物", "note": "", "latinNote": "", "isNew": false, "id": "ess:Myrtle", "comp": [["檸檬烯", "limonene"], ["沉香醇", "linalool"], ["乙酸牻牛兒酯", "geranyl acetate"], ["α-蒎烯", "α-pinene"], ["乙酸沉香酯", "linalyl acetate"], ["1,8-桉油醇", "1,8-cineole"]], "compV": true, "compNote": "阿爾及利亞樣本（Hennia 等 2015）：檸檬烯 23%、沉香醇 15%、乙酸牻牛兒酯 11%、α-蒎烯 11%；桃金孃組成隨產地變化大（有些產地以 α-蒎烯、桉油醇、乙酸桃金孃酯為主），只查證一份文獻"}, {"kind": "ess", "zh": "芳枸葉", "latin": ["Agonis fragrans"], "en": "Fragonia", "part": "葉片與枝條", "method": ["蒸餾"], "family": "桃金孃科", "type": "氧化物", "note": "", "latinNote": "", "isNew": true, "id": "ess:Fragonia", "comp": [["1,8-桉油醇", "1,8-cineole"], ["α-蒎烯", "α-pinene"]], "compV": true, "compNote": "1,8-桉油醇約 28–34%、α-蒎烯約 14–28%；少數樣本幾乎沒有桉油醇，改以沉香醇、桃金孃醇為主（Journal of Essential Oil Research 摘要）"}, {"kind": "ess", "zh": "沉香醇羅勒（甜羅勒）", "latin": ["Ocimum basilicum"], "en": "Basil ct. linalool", "part": "葉", "method": ["蒸餾"], "family": "唇形科", "type": "單萜醇", "note": "", "latinNote": "", "isNew": false, "id": "ess:Basil ct. linalool", "comp": [["沉香醇", "linalool"], ["1,8-桉油醇", "1,8-cineole"], ["丁香酚", "eugenol"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "真正薰衣草", "latin": ["Lavandula angustifolia"], "en": "Lavender", "part": "開花整株", "method": ["蒸餾"], "family": "唇形科", "type": "酯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Lavender", "comp": [["沉香醇", "linalool"], ["乙酸沉香酯", "linalyl acetate"], ["順-羅勒烯", "cis-ocimene"], ["反-羅勒烯", "trans-ocimene"], ["萜品烯-4-醇", "terpinen-4-ol"], ["乙酸薰衣草酯", "lavandulyl acetate"]], "compV": true, "compNote": "ISO 3515:2004：沉香醇 25–38%、乙酸沉香酯 25–45%、順羅勒烯 4–10%、萜品烯-4-醇 2–6%；樟腦 ≤0.5%"}, {"kind": "ess", "zh": "醒目薰衣草", "latin": ["Lavandula intermedia"], "en": "Lavandin", "part": "開花整株", "method": ["蒸餾"], "family": "唇形科", "type": "酯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Lavandin", "comp": [["沉香醇", "linalool"], ["乙酸沉香酯", "linalyl acetate"], ["樟腦", "camphor"], ["龍腦", "borneol"], ["1,8-桉油醇", "1,8-cineole"], ["萜品烯-4-醇", "terpinen-4-ol"]], "compV": true, "compNote": "西班牙樣本平均：沉香醇 41%（26–51）、乙酸沉香酯 17%、樟腦 11%、龍腦 7%（面積百分比）；樟腦明顯高於真正薰衣草"}, {"kind": "ess", "zh": "穗花薰衣草", "latin": ["Lavandula latifolia", "Lavandula spica"], "en": "Spike lavender", "part": "開花整株", "method": ["蒸餾"], "family": "唇形科", "type": "氧化物", "note": "", "latinNote": "", "isNew": false, "id": "ess:Spike lavender", "comp": [["沉香醇", "linalool"], ["1,8-桉油醇", "1,8-cineole"], ["樟腦", "camphor"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "快樂鼠尾草", "latin": ["Salvia sclarea"], "en": "Clary sage", "part": "整株", "method": ["蒸餾"], "family": "唇形科", "type": "酯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Clary sage", "comp": [["乙酸沉香酯", "linalyl acetate"], ["沉香醇", "linalool"], ["α-萜品醇", "α-terpineol"], ["大根老鸛草烯 D", "germacrene D"], ["β-石竹烯", "β-caryophyllene"], ["香紫蘇醇", "sclareol"]], "compV": true, "compNote": "aromaweb：乙酸沉香酯約 60–70%、沉香醇約 10–15%；香紫蘇醇（二萜醇）存在於蒸餾油中"}, {"kind": "ess", "zh": "沉香醇百里香", "latin": ["Thymus vulgaris"], "en": "Thyme (CT. linalool)", "part": "整株", "method": ["蒸餾"], "family": "唇形科", "type": "單萜醇", "note": "", "latinNote": "", "isNew": false, "id": "ess:Thyme (CT. linalool)", "comp": [["沉香醇", "linalool"], ["乙酸沉香酯", "linalyl acetate"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "百里酚百里香", "latin": ["Thymus vulgaris"], "en": "Thyme (CT. thymol)", "part": "整株", "method": ["蒸餾"], "family": "唇形科", "type": "酚", "note": "", "latinNote": "與同名精油同學名，差別在 CT 化學類型", "isNew": false, "id": "ess:Thyme (CT. thymol)", "comp": [["百里酚", "thymol"], ["γ-萜品烯", "γ-terpinene"], ["對傘花烴", "p-cymene"]], "compV": true, "compNote": "一份比較表：百里酚 >30%，γ-萜品烯與對傘花烴各 10–20%"}, {"kind": "ess", "zh": "桉油醇迷迭香", "latin": ["Rosmarinus officinalis"], "en": "Rosemary (CT. cineole)", "part": "整株", "method": ["蒸餾"], "family": "唇形科", "type": "氧化物", "note": "", "latinNote": "", "isNew": false, "id": "ess:Rosemary (CT. cineole)", "comp": [["1,8-桉油醇", "1,8-cineole"], ["α-蒎烯", "α-pinene"], ["樟腦", "camphor"]], "compV": true, "compNote": "一份比較表：1,8-桉油醇 >30%，α-蒎烯與樟腦各 10–20%"}, {"kind": "ess", "zh": "馬鞭草酮迷迭香", "latin": ["Rosmarinus officinalis"], "en": "Rosemary (CT. verbenone)", "part": "整株", "method": ["蒸餾"], "family": "唇形科", "type": "單萜酮", "note": "", "latinNote": "與同名精油同學名，差別在 CT 化學類型", "isNew": false, "id": "ess:Rosemary (CT. verbenone)", "comp": [["α-蒎烯", "α-pinene"], ["馬鞭草酮", "verbenone"], ["乙酸龍腦酯", "bornyl acetate"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "胡椒薄荷", "latin": ["Mentha piperita"], "en": "Peppermint", "part": "整株", "method": ["蒸餾"], "family": "唇形科", "type": "單萜醇", "note": "", "latinNote": "", "isNew": false, "id": "ess:Peppermint", "comp": [["薄荷醇", "menthol"], ["薄荷酮", "menthone"], ["乙酸薄荷酯", "menthyl acetate"], ["新薄荷醇", "neomenthol"], ["1,8-桉油醇", "1,8-cineole"], ["薄荷呋喃", "menthofuran"]], "compV": true, "compNote": "aromaweb 列出之主要成分（引自 Tisserand & Young《Essential Oil Safety》），未標比例"}, {"kind": "ess", "zh": "綠薄荷", "latin": ["Mentha spicata"], "en": "Spearmint", "part": "整株", "method": ["蒸餾"], "family": "唇形科", "type": "單萜酮", "note": "", "latinNote": "", "isNew": false, "id": "ess:Spearmint", "comp": [["香芹酮", "carvone"], ["檸檬烯", "limonene"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "甜馬鬱蘭", "latin": ["Origanum majorana"], "en": "Sweet marjoram", "part": "整株", "method": ["蒸餾"], "family": "唇形科", "type": "單萜醇", "note": "", "latinNote": "", "isNew": false, "id": "ess:Sweet marjoram", "comp": [["萜品烯-4-醇", "terpinen-4-ol"], ["順式水合檜烯", "cis-sabinene hydrate"], ["γ-萜品烯", "γ-terpinene"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "香蜂草（蜜蜂花）", "latin": ["Melissa officinalis"], "en": "Melissa", "part": "葉", "method": ["蒸餾"], "family": "唇形科", "type": "醛", "note": "", "latinNote": "", "isNew": false, "id": "ess:Melissa", "comp": [["牻牛兒醛", "geranial"], ["橙花醛", "neral"], ["香茅醛", "citronellal"], ["6-甲基-5-庚烯-2-酮", "6-methyl-5-hepten-2-one"], ["β-石竹烯", "β-caryophyllene"], ["乙酸牻牛兒酯", "geranyl acetate"]], "compV": true, "compNote": "aromaweb：醛類約 60%（檸檬醛 = 牻牛兒醛＋橙花醛）、單萜醇約 10%、香茅醛約 10%"}, {"kind": "ess", "zh": "廣藿香", "latin": ["Pogostemon cablin"], "en": "Patchouli", "part": "整株", "method": ["蒸餾"], "family": "唇形科", "type": "倍半萜醇", "note": "", "latinNote": "", "isNew": false, "id": "ess:Patchouli", "comp": [["廣藿香醇", "patchouli alcohol"], ["α-布藜烯", "α-bulnesene"], ["α-癒創木烯", "α-guaiene"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "永久花（蠟菊）", "latin": ["Helichrysum italicum"], "en": "Immortelle/ Helichrysum", "part": "花", "method": ["蒸餾"], "family": "菊科", "type": "酯", "note": "芳療界通常將之分為『倍半萜酮』類", "latinNote": "", "isNew": false, "id": "ess:Immortelle/ Helichrysum", "comp": [["乙酸橙花酯", "neryl acetate"], ["α-蒎烯", "α-pinene"], ["γ-薑黃烯", "γ-curcumene"]], "compV": true, "compNote": "文獻列出的主要成分有 α-、γ-薑黃烯、乙酸橙花酯、α-蒎烯、α-古巴烯、檸檬烯、α-佛手柑油烯等，該篇未給個別百分比（agrojournal 研究）"}, {"kind": "ess", "zh": "德國洋甘菊", "latin": ["Matricaria recutita"], "en": "German chamomile", "part": "花", "method": ["蒸餾"], "family": "菊科", "type": "倍半萜烯", "note": "", "latinNote": "", "isNew": false, "id": "ess:German chamomile", "comp": [["α-沒藥醇氧化物 A", "α-bisabolol oxide A"], ["母菊天藍烴", "chamazulene"], ["α-沒藥酮氧化物 A", "α-bisabolone oxide A"], ["α-沒藥醇氧化物 B", "α-bisabolol oxide B"]], "compV": true, "compNote": "伊朗樣本（Amiri & Sharafzadeh 2014）：沒藥醇氧化物 A 17%、母菊天藍烴 15%、沒藥酮氧化物 A 6%、沒藥醇氧化物 B 5%；α-沒藥醇本身比例依化學型而異"}, {"kind": "ess", "zh": "羅馬洋甘菊", "latin": ["Chamaemelum nobile"], "en": "Roman chamomile", "part": "花", "method": ["蒸餾"], "family": "菊科", "type": "酯", "note": "", "latinNote": "", "isNew": true, "id": "ess:Roman chamomile", "comp": [["當歸酸異丁酯", "isobutyl angelate"], ["當歸酸 2-甲基丁酯", "2-methylbutyl angelate"], ["當歸酸異戊酯", "isoamyl angelate"]], "compV": true, "compNote": "當歸酸異丁酯約 32–36%、2-甲基丁酯約 16–20%、異戊酯約 15–20%（Aromatic Studies 專論）"}, {"kind": "ess", "zh": "西洋蓍草", "latin": ["Achillea millefolium"], "en": "Yarrow", "part": "整株", "method": ["蒸餾"], "family": "菊科", "type": "倍半萜烯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Yarrow", "comp": [["β-蒎烯", "β-pinene"], ["1,8-桉油醇", "1,8-cineole"], ["檜烯", "sabinene"], ["洋甘菊薁", "chamazulene"]], "compV": true, "compNote": "愛沙尼亞樣本：β-蒎烯約 15–29%、1,8-桉油醇約 7–18%、檜烯約 3–18%、洋甘菊薁約 0.1–13%，化學型差異很大"}, {"kind": "ess", "zh": "土木香", "latin": ["Inula graveolens", "Dittrichia graveolens"], "en": "Inula", "part": "開花地上部", "method": ["蒸餾"], "family": "菊科", "type": "酯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Inula", "comp": [["乙酸龍腦酯", "bornyl acetate"], ["龍腦", "borneol"]], "compV": true, "compNote": "乙酸龍腦酯約 22–60%、龍腦約 8–61%，依產地與採收季節變動；伊朗樣本則以 1,8-桉油醇為主（文獻整理）"}, {"kind": "ess", "zh": "甜茴香", "latin": ["Foeniculum vulgare"], "en": "Sweet fennel", "part": "種子", "method": ["蒸餾"], "family": "繖形科", "type": "醚", "note": "", "latinNote": "", "isNew": false, "id": "ess:Sweet fennel", "comp": [["反式茴香腦", "(E)-anethole"], ["檸檬烯", "limonene"], ["小茴香酮", "fenchone"], ["甲基醚蔞葉酚", "estragole"], ["α-蒎烯", "α-pinene"]], "compV": true, "compNote": "aromaweb：反式茴香腦約 70–80%"}, {"kind": "ess", "zh": "芫荽（胡荽）", "latin": ["Coriandrum sativum"], "en": "Coriander", "part": "種子", "method": ["蒸餾"], "family": "繖形科", "type": "單萜醇", "note": "", "latinNote": "", "isNew": false, "id": "ess:Coriander", "comp": [["沉香醇", "linalool"], ["乙酸橙花酯", "neryl acetate"], ["γ-萜品烯", "γ-terpinene"], ["α-蒎烯", "α-pinene"], ["對傘花烴", "p-cymene"]], "compV": true, "compNote": "伊朗 19 個品系種子精油：沉香醇 41–80%（多數 >60%）、乙酸橙花酯 2–14%、γ-萜品烯 0.1–14%"}, {"kind": "ess", "zh": "白松香", "latin": ["Ferula galbaniflua"], "en": "Galbanum", "part": "樹脂", "method": ["蒸餾"], "family": "繖形科", "type": "單萜烯", "note": "", "latinNote": "", "isNew": true, "id": "ess:Galbanum", "comp": [["β-蒎烯", "β-pinene"], ["α-蒎烯", "α-pinene"], ["δ-3-蒈烯", "δ-3-carene"], ["布藜醇", "bulnesol"]], "compV": true, "compNote": "β-蒎烯約 25% 以上；α-蒎烯、布藜醇、δ-3-蒈烯、月桂烯各約 5–10%（廠商規格頁）"}, {"kind": "ess", "zh": "柑桔（橘樹／紅桔）", "latin": ["Citrus nobilis", "Citrus reticulata"], "en": "Mandarin", "part": "果皮", "method": ["壓榨"], "family": "芸香科", "type": "單萜烯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Mandarin", "comp": [["檸檬烯", "limonene"], ["γ-萜品烯", "γ-terpinene"], ["N-甲基鄰胺基苯甲酸甲酯", "methyl N-methylanthranilate"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "葡萄柚", "latin": ["Citrus paradisi"], "en": "Grapefruit", "part": "果皮", "method": ["壓榨"], "family": "芸香科", "type": "單萜烯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Grapefruit", "comp": [["檸檬烯", "limonene"], ["月桂烯", "myrcene"], ["圓柚酮", "nootkatone"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "萊姆（酸橙）", "latin": ["Citrus aurantifolia"], "en": "Lime", "part": "果皮", "method": ["壓榨"], "family": "芸香科", "type": "單萜烯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Lime", "comp": [["檸檬烯", "limonene"], ["β-蒎烯", "β-pinene"], ["γ-萜品烯", "γ-terpinene"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "檸檬", "latin": ["Citrus limon", "Citrus limonum"], "en": "Lemon", "part": "果皮", "method": ["壓榨"], "family": "芸香科", "type": "單萜烯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Lemon", "comp": [["檸檬烯", "limonene"], ["β-蒎烯", "β-pinene"], ["γ-萜品烯", "γ-terpinene"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "甜橙", "latin": ["Citrus sinensis"], "en": "Orange, sweet", "part": "果皮", "method": ["壓榨"], "family": "芸香科", "type": "單萜烯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Orange, sweet", "comp": [["檸檬烯", "limonene"], ["月桂烯", "β-myrcene"], ["α-蒎烯", "α-pinene"]], "compV": true, "compNote": "aromaweb：d-檸檬烯約 90–97%（隨品種與成熟度）"}, {"kind": "ess", "zh": "橙花", "latin": ["Citrus aurantium"], "en": "Neroli", "part": "花", "method": ["蒸餾"], "family": "芸香科", "type": "單萜醇", "note": "", "latinNote": "", "isNew": false, "id": "ess:Neroli", "comp": [["沉香醇", "linalool"], ["檸檬烯", "limonene"], ["橙花叔醇", "nerolidol"], ["乙酸沉香酯", "linalyl acetate"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "苦橙葉（橙葉）", "latin": ["Citrus aurantium"], "en": "Petitgrain", "part": "葉", "method": ["蒸餾"], "family": "芸香科", "type": "酯", "note": "", "latinNote": "原表格空白，依苦橙補上，請核對", "isNew": false, "id": "ess:Petitgrain", "comp": [["乙酸沉香酯", "linalyl acetate"], ["沉香醇", "linalool"], ["α-萜品醇", "α-terpineol"], ["乙酸牻牛兒酯", "geranyl acetate"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "苦橙", "latin": ["Citrus aurantium"], "en": "Orange, bitter", "part": "果皮", "method": ["壓榨"], "family": "芸香科", "type": "單萜烯", "note": "", "latinNote": "原表格空白，依苦橙補上，請核對", "isNew": false, "id": "ess:Orange, bitter", "comp": [["檸檬烯", "limonene"], ["月桂烯", "myrcene"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "佛手柑", "latin": ["Citrus bergamia"], "en": "Bergamot", "part": "果皮", "method": ["壓榨"], "family": "芸香科", "type": "單萜烯", "note": "芳療界通常將之分為『酯』類", "latinNote": "", "isNew": false, "id": "ess:Bergamot", "comp": [["檸檬烯", "limonene"], ["乙酸沉香酯", "linalyl acetate"], ["沉香醇", "linalool"], ["γ-萜品烯", "γ-terpinene"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "日本柚子", "latin": ["Citrus junos"], "en": "Yuzu", "part": "果皮", "method": ["壓榨"], "family": "芸香科", "type": "單萜烯", "note": "", "latinNote": "", "isNew": true, "id": "ess:Yuzu", "comp": [["檸檬烯", "limonene"], ["γ-萜品烯", "γ-terpinene"], ["β-水芹烯", "β-phellandrene"], ["月桂烯", "myrcene"]], "compV": true, "compNote": "檸檬烯約 63–68%、γ-萜品烯約 11–12.5%、β-水芹烯約 5%；沉香醇只有約 2–3%（六個品種的果皮油研究）"}, {"kind": "ess", "zh": "大馬士革玫瑰", "latin": ["Rosa damascena"], "en": "Damask rose", "part": "花", "method": ["蒸餾", "溶劑"], "family": "薔薇科", "type": "單萜醇", "note": "", "latinNote": "", "isNew": false, "id": "ess:Damask rose", "comp": [["香茅醇", "citronellol"], ["牻牛兒醇", "geraniol"], ["橙花醇", "nerol"]], "compV": true, "compNote": "香茅醇約 21–31%、牻牛兒醇約 19–23%、橙花醇約 9–11%；另含相當比例的長鏈烷烴（十九烷等，約 12–17%）"}, {"kind": "ess", "zh": "千葉玫瑰（西洋玫瑰）", "latin": ["Rosa centifolia"], "en": "Rose cabbage", "part": "花", "method": ["溶劑"], "family": "薔薇科", "type": "單萜醇", "note": "芳療界通常將之分為『苯基酯』類", "latinNote": "", "isNew": false, "id": "ess:Rose cabbage", "comp": [["苯乙醇", "phenylethyl alcohol"], ["香茅醇", "citronellol"], ["牻牛兒醇", "geraniol"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "茉莉", "latin": ["Jasminum grandiflorum"], "en": "Jasmine", "part": "花", "method": ["溶劑"], "family": "木樨科", "type": "苯基酯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Jasmine", "comp": [["乙酸苄酯", "benzyl acetate"], ["苯甲酸苄酯", "benzyl benzoate"], ["植醇", "phytol"], ["沉香醇", "linalool"]], "compV": true, "compNote": "原精 GC 報告：乙酸苄酯約 25%、苯甲酸苄酯約 13%、植醇約 9%、異植醇約 8%、沉香醇約 7%、順式茉莉酮約 4%"}, {"kind": "ess", "zh": "波旁天竺葵", "latin": ["Pelargonium graveolens", "Pelargonium asperum"], "en": "Geranium bourbon", "part": "葉", "method": ["蒸餾"], "family": "牻牛兒科", "type": "單萜醇", "note": "", "latinNote": "", "isNew": false, "id": "ess:Geranium bourbon", "comp": [["香茅醇", "citronellol"], ["牻牛兒醇", "geraniol"], ["甲酸香茅酯", "citronellyl formate"], ["異薄荷酮", "isomenthone"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "檸檬香茅", "latin": ["Cymbopogon citratus"], "en": "Lemongrass", "part": "整株", "method": ["蒸餾"], "family": "禾本科", "type": "醛", "note": "", "latinNote": "", "isNew": false, "id": "ess:Lemongrass", "comp": [["牻牛兒醛", "geranial"], ["橙花醛", "neral"], ["月桂烯", "myrcene"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "玫瑰草", "latin": ["Cymbopogon martini"], "en": "Palmarosa", "part": "整株", "method": ["蒸餾"], "family": "禾本科", "type": "單萜醇", "note": "", "latinNote": "", "isNew": false, "id": "ess:Palmarosa", "comp": [["牻牛兒醇", "geraniol"], ["乙酸牻牛兒酯", "geranyl acetate"], ["金合歡醇", "(E,Z)-farnesol"], ["沉香醇", "linalool"], ["β-羅勒烯", "(E)-β-ocimene"], ["β-石竹烯", "β-caryophyllene"]], "compV": true, "compNote": "aromaweb 列出之主要成分（引自 Tisserand & Young《Essential Oil Safety》），未標比例；單萜醇與酯類為主"}, {"kind": "ess", "zh": "岩蘭草（香根草）", "latin": ["Chrysopogon zizanioides", "Andropogon zizanioides"], "en": "Vetiver", "part": "根", "method": ["蒸餾"], "family": "禾本科", "type": "倍半萜醇", "note": "", "latinNote": "", "isNew": false, "id": "ess:Vetiver", "comp": [["岩蘭草醇", "khusimol"], ["α-岩蘭草酮", "α-vetivone"], ["β-岩蘭草酮", "β-vetivone"], ["庫西酮", "khusimone"]], "compV": true, "compNote": "岩蘭草醇約 11–30%、α-岩蘭草酮約 2–5%；另有大量降倍半萜烯類，隨產地差異大（vetiver 精油綜述）"}, {"kind": "ess", "zh": "薑", "latin": ["Zingiber officinale"], "en": "Ginger", "part": "根", "method": ["蒸餾"], "family": "薑科", "type": "倍半萜烯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Ginger", "comp": [["薑烯", "zingiberene"], ["α-薑黃烯", "ar-curcumene"], ["β-倍半水芹烯", "β-sesquiphellandrene"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "小豆蔻", "latin": ["Elettaria cardamomum"], "en": "Cardamom", "part": "種子", "method": ["蒸餾"], "family": "薑科", "type": "氧化物", "note": "", "latinNote": "", "isNew": false, "id": "ess:Cardamom", "comp": [["乙酸萜品酯", "α-terpinyl acetate"], ["1,8-桉油醇", "1,8-cineole"], ["沉香醇", "linalool"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "泰國蔘薑", "latin": ["Zingiber cassumunar"], "en": "Plai", "part": "根", "method": ["蒸餾"], "family": "薑科", "type": "單萜烯", "note": "", "latinNote": "", "isNew": true, "id": "ess:Plai", "comp": [["萜品烯-4-醇", "terpinen-4-ol"], ["檜烯", "sabinene"], ["γ-萜品烯", "γ-terpinene"], ["DMPBD", "(E)-1-(3,4-dimethoxyphenyl)butadiene"]], "compV": true, "compNote": "泰國三個產地：檜烯約 24–54%、萜品烯-4-醇約 22–49%、γ-萜品烯約 5–8%、DMPBD 約 1–16%（Agric. Nat. Resour. 研究）"}, {"kind": "ess", "zh": "黑胡椒", "latin": ["Piper nigrum"], "en": "Black pepper", "part": "果實", "method": ["蒸餾"], "family": "胡椒科", "type": "倍半萜烯", "note": "芳療界通常將之分為『單萜烯』類", "latinNote": "", "isNew": false, "id": "ess:Black pepper", "comp": [["檸檬烯", "limonene"], ["蒎烯", "pinene"], ["月桂烯", "myrcene"], ["水芹烯", "phellandrene"], ["β-石竹烯", "β-caryophyllene"], ["檜烯", "sabinene"]], "compV": true, "compNote": "aromaweb 引 Shirley Price《The Aromatherapy Workbook》，未標比例"}, {"kind": "ess", "zh": "依蘭", "latin": ["Cananga odorata"], "en": "Ylang ylang", "part": "花", "method": ["蒸餾"], "family": "番荔枝科", "type": "酯", "note": "", "latinNote": "", "isNew": false, "id": "ess:Ylang ylang", "comp": [["沉香醇", "linalool"], ["乙酸苄酯", "benzyl acetate"], ["大根老鸛草烯", "germacrene D"], ["β-石竹烯", "β-caryophyllene"]], "compV": true, "compNote": "依蒸餾分段差異很大：一份樣本以 α-金合歡烯約 24%、大根老鸛草烯約 22%、β-石竹烯約 12% 為主；前段（特級）通常含較多沉香醇與乙酸苄酯"}, {"kind": "ess", "zh": "澳洲檀香", "latin": ["Santalum spicatum"], "en": "Sandalwood australian", "part": "木質部", "method": ["蒸餾"], "family": "檀香科", "type": "倍半萜醇", "note": "", "latinNote": "", "isNew": false, "id": "ess:Sandalwood australian", "comp": [["檀香醇類", "santalols"], ["α-沒藥醇", "α-bisabolol"], ["(E,E)-金合歡醇", "(E,E)-farnesol"], ["(Z)-努西弗醇", "(Z)-nuciferol"]], "compV": true, "compNote": "檀香醇（α-、β-）合計約 24–34%；另有 α-沒藥醇、努特卡醇、(E,E)-金合歡醇、dendrolasin（資料來自 Tisserand & Young）"}, {"kind": "ess", "zh": "印度檀香", "latin": ["Santalum album"], "en": "Sandalwood mysore", "part": "木質部", "method": ["蒸餾"], "family": "檀香科", "type": "倍半萜醇", "note": "稀有物種", "latinNote": "", "isNew": false, "id": "ess:Sandalwood mysore", "comp": [["α-檀香醇", "α-santalol"], ["β-檀香醇", "β-santalol"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "錫蘭肉桂", "latin": ["Cinnamomum verum", "Cinnamomum zeylanicum"], "en": "Cinnamon", "part": "葉", "method": ["蒸餾"], "family": "樟科", "type": "酚", "note": "", "latinNote": "", "isNew": false, "id": "ess:Cinnamon", "comp": [["丁香酚", "eugenol"], ["β-石竹烯", "β-caryophyllene"], ["沉香醇", "linalool"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "山雞椒", "latin": ["Litsea cubeba"], "en": "May chang", "part": "果實", "method": ["蒸餾"], "family": "樟科", "type": "醛", "note": "", "latinNote": "", "isNew": false, "id": "ess:May chang", "comp": [["牻牛兒醛", "geranial"], ["橙花醛", "neral"], ["檸檬烯", "limonene"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "羅文莎葉", "latin": ["Cinnamomum camphora"], "en": "Ravintsara ct. cineole", "part": "葉", "method": ["蒸餾"], "family": "樟科", "type": "醚", "note": "", "latinNote": "", "isNew": false, "id": "ess:Ravintsara ct. cineole", "comp": [["1,8-桉油醇", "1,8-cineole"], ["檜烯", "sabinene"], ["α-萜品醇", "α-terpineol"], ["α-蒎烯", "α-pinene"], ["β-蒎烯", "β-pinene"]], "compV": true, "compNote": "aromaweb（馬達加斯加產）；中國產可能含黃樟素、甲基丁香酚，須確認來源與化學型"}, {"kind": "ess", "zh": "薔薇木（花梨木）", "latin": ["Aniba rosaeodora"], "en": "Rosewood", "part": "木心", "method": ["蒸餾"], "family": "樟科", "type": "單萜醇", "note": "瀕危物種", "latinNote": "", "isNew": false, "id": "ess:Rosewood", "comp": [["沉香醇", "linalool"], ["α-萜品醇", "α-terpineol"]], "compV": false, "compNote": ""}, {"kind": "ess", "zh": "芳樟", "latin": ["Cinnamomum camphora"], "en": "Ho Wood", "part": "木材", "method": ["蒸餾"], "family": "樟科", "type": "單萜醇", "note": "", "latinNote": "", "isNew": true, "id": "ess:Ho Wood", "comp": [["沉香醇", "linalool"]], "compV": true, "compNote": "aromaweb 僅列沉香醇（引 Tisserand & Young）；芳樟型樟樹油沉香醇通常占多數，次要成分未查證"}, {"kind": "ess", "zh": "古巴香脂", "latin": ["Copaifera officinalis"], "en": "Copaiba balsam", "part": "樹脂", "method": ["蒸餾"], "family": "豆科", "type": "倍半萜烯", "note": "", "latinNote": "", "isNew": true, "id": "ess:Copaiba balsam", "comp": [["β-石竹烯", "β-caryophyllene"], ["α-葎草烯", "α-humulene"], ["α-古巴烯", "α-copaene"], ["反式-α-佛手柑油烯", "trans-α-bergamotene"]], "compV": true, "compNote": "五批巴西樣本：β-石竹烯約 30–67%、α-葎草烯約 3–9%、大根老鸛草烯與反式-α-佛手柑油烯依批次而異（廠商 GC-MS）"}, {"kind": "carrier", "zh": "甜杏仁油", "latin": ["Prunus dulcis", "Prunus amygdalus"], "en": "Sweet almond", "part": "核仁", "method": [], "family": "薔薇科", "type": "", "note": "2026更正學名", "latinNote": "", "isNew": false, "id": "carrier:Sweet almond", "fa": [["油酸", "oleic C18:1", "約 69%"], ["亞油酸", "linoleic C18:2", "約 17%"], ["棕櫚酸", "palmitic C16:0", "約 6.5%"], ["硬脂酸", "stearic C18:0", "約 1.7%"]], "faV": true, "faNote": "Wikipedia 食用油表（USDA 數據）；甜杏仁油實際油酸約 62–78%，隨品種與產地變動"}, {"kind": "carrier", "zh": "杏桃仁油", "latin": ["Prunus armeniaca"], "en": "Apricot kernel", "part": "核仁", "method": [], "family": "薔薇科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Apricot kernel", "fa": [["油酸", "oleic C18:1", "約 68%"], ["亞油酸", "linoleic C18:2", "約 24%"]], "faV": true, "faNote": "Grasas y Aceites 研究（杏、桃、櫻桃核仁油比較）；其餘為棕櫚酸、硬脂酸等少量"}, {"kind": "carrier", "zh": "鱷梨油（酪梨油）", "latin": ["Persea americana"], "en": "Avocado", "part": "果實", "method": [], "family": "樟科", "type": "", "note": "質地黏稠，使用須與較清爽基底油1:1混合。", "latinNote": "", "isNew": false, "id": "carrier:Avocado", "fa": [["油酸", "oleic C18:1", "54–61%"], ["棕櫚酸", "palmitic C16:0", "15–21%"], ["亞油酸", "linoleic C18:2", "11–20%"], ["棕櫚油酸", "palmitoleic C16:1", "2–10%"]], "faV": true, "faNote": "OCL 期刊 4 個品種（Ettinger、Fuerte、Hass、Reed）的範圍"}, {"kind": "carrier", "zh": "月見草油", "latin": ["Oenothera biennis"], "en": "Evening primrose", "part": "種子", "method": [], "family": "柳葉菜科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Evening primrose", "fa": [["亞油酸", "linoleic C18:2", "約 70–75%"], ["γ-亞麻酸", "GLA C18:3", "約 8–10%"], ["油酸", "oleic C18:1", "約 6–11%"]], "faV": false, "faNote": "教材常見數值，尚未取得可開啟的文獻原文（PMC 頁面被驗證擋住）"}, {"kind": "carrier", "zh": "葡萄籽油", "latin": ["Vitis vinifera"], "en": "Grapeseed", "part": "種子", "method": [], "family": "葡萄科", "type": "", "note": "葡萄籽含油量較低，市售葡萄籽油常以溶劑萃取或精煉取得；少有冷壓產品，芳療上可使用精煉後的葡萄籽油。", "latinNote": "", "isNew": false, "id": "carrier:Grapeseed", "fa": [["亞油酸", "linoleic C18:2", "58–78%"], ["油酸", "oleic C18:1", "12–28%"], ["棕櫚酸", "palmitic C16:0", "5.5–11%"], ["硬脂酸", "stearic C18:0", "3–6.5%"]], "faV": true, "faNote": "Codex Alimentarius CXS 210 規範範圍"}, {"kind": "carrier", "zh": "荷荷芭油", "latin": ["Simmondsia chinensis"], "en": "Jojoba", "part": "種子", "method": [], "family": "油蠟樹科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Jojoba", "fa": [["11-二十碳烯酸", "eicosenoic C20:1", "約 77%"], ["芥酸", "erucic C22:1", "約 12%"], ["油酸", "oleic C18:1", "約 9%"]], "faV": true, "faNote": "荷荷芭油約 97% 是「液態蠟（蠟酯）」不是三酸甘油酯；數字為脂肪酸部分的莫耳分率（Wikipedia）"}, {"kind": "carrier", "zh": "小麥胚芽油", "latin": ["Triticum aestivum"], "en": "Wheatgerm", "part": "胚芽", "method": [], "family": "禾本科", "type": "", "note": "觸感厚重，且具強烈氣味，建議以5~10%的比例添加在其他基底油中。 2026更正學名", "latinNote": "", "isNew": false, "id": "carrier:Wheatgerm", "fa": [["亞油酸", "linoleic C18:2", "約 55%"], ["棕櫚酸", "palmitic C16:0", "約 17%"], ["油酸", "oleic C18:1", "約 15%"], ["α-亞麻酸", "linolenic C18:3", "約 7%"]], "faV": true, "faNote": "Wikipedia（每 100 g 油）；維生素 E 含量高，也易氧化"}, {"kind": "carrier", "zh": "椰子油", "latin": ["Cocos nucifera"], "en": "Coconut", "part": "果實", "method": [], "family": "棕櫚科", "type": "", "note": "可透過壓榨方式取得，依製程可分為初榨椰子油及精製椰子油；芳療使用時應注意其製程與精製程度。", "latinNote": "", "isNew": false, "id": "carrier:Coconut", "fa": [["月桂酸", "lauric C12:0", "約 47%"], ["肉豆蔻酸", "myristic C14:0", "約 18%"], ["棕櫚酸", "palmitic C16:0", "7.5–10%"], ["油酸", "oleic C18:1", "5–10%"], ["亞油酸", "linoleic C18:2", "1–2.5%"]], "faV": true, "faNote": "棕櫚酸、油酸、亞油酸為 Codex 範圍；月桂酸、肉豆蔻酸取自 Wikipedia 食用油表"}, {"kind": "carrier", "zh": "昆士蘭堅果", "latin": ["Macadamia integrifolia", "Macadamia tetraphylla"], "en": "Macadamia", "part": "堅果", "method": [], "family": "山龍眼科", "type": "", "note": "2026更正學名", "latinNote": "", "isNew": false, "id": "carrier:Macadamia", "fa": [["油酸", "oleic C18:1", "約 40–60%"], ["棕櫚油酸", "palmitoleic C16:1", "約 19–36%"], ["棕櫚酸", "palmitic C16:0", "9–13%"], ["硬脂酸", "stearic C18:0", "4.6–6%"]], "faV": true, "faNote": "Wikipedia 兩段數字不完全一致，故給範圍；棕櫚油酸含量高是澳洲堅果油的特徵"}, {"kind": "carrier", "zh": "榛果油", "latin": ["Corylus avellana"], "en": "Hazelnut", "part": "果實", "method": [], "family": "榛科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Hazelnut", "fa": [["油酸", "oleic C18:1", "約 79%"], ["亞油酸", "linoleic C18:2", "約 10%"], ["棕櫚酸", "palmitic C16:0", "約 6%"], ["硬脂酸", "stearic C18:0", "約 2.7%"]], "faV": true, "faNote": "Wikipedia 食用油表（USDA 數據）"}, {"kind": "carrier", "zh": "水蜜桃核油", "latin": ["Prunus persica"], "en": "Peach kernel", "part": "核仁", "method": [], "family": "薔薇科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Peach kernel", "fa": [["油酸", "oleic C18:1", "約 69%"], ["亞油酸", "linoleic C18:2", "約 22%"]], "faV": true, "faNote": "同上研究；與杏仁油組成接近"}, {"kind": "carrier", "zh": "芝麻油", "latin": ["Sesamum indicum"], "en": "Sesame", "part": "種子", "method": [], "family": "胡麻科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Sesame", "fa": [["亞油酸", "linoleic C18:2", "41.5–47.9%"], ["油酸", "oleic C18:1", "35.9–42.3%"], ["棕櫚酸", "palmitic C16:0", "7.9–12%"], ["硬脂酸", "stearic C18:0", "4.8–6.1%"]], "faV": true, "faNote": "Codex Alimentarius CXS 210 規範範圍"}, {"kind": "carrier", "zh": "玫瑰果油", "latin": ["Rosa rubiginosa", "Rosa moschata"], "en": "Rosehip Seed", "part": "種子", "method": [], "family": "薔薇科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Rosehip Seed", "fa": [["亞油酸", "linoleic C18:2", "約 25–47%"], ["α-亞麻酸", "linolenic C18:3", "約 5–12%"], ["油酸", "oleic C18:1", "約 4–14%"]], "faV": true, "faNote": "塞爾維亞野生與栽培 Rosa canina 研究範圍；市售玫瑰果油多半亞油酸、亞麻酸比例更高，依品種與榨油法不同"}, {"kind": "carrier", "zh": "山茶花籽油", "latin": ["Camellia oleifera"], "en": "Camellia", "part": "種子", "method": [], "family": "山茶科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Camellia", "fa": [["油酸", "oleic C18:1", "約 75–87%"], ["亞油酸", "linoleic C18:2", "約 7–10%"], ["棕櫚酸", "palmitic C16:0", "約 8–10%"]], "faV": false, "faNote": "教材常見數值；已搜到文獻但全文無法開啟，尚未逐筆核對"}, {"kind": "carrier", "zh": "向日葵油", "latin": ["Helianthus annuus"], "en": "Sunflower", "part": "種子", "method": [], "family": "菊科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Sunflower", "fa": [["亞油酸", "linoleic C18:2", "48–74%"], ["油酸", "oleic C18:1", "14–39%"], ["棕櫚酸", "palmitic C16:0", "5–7.6%"], ["硬脂酸", "stearic C18:0", "2.7–6.5%"]], "faV": true, "faNote": "Codex 一般葵花油範圍；高油酸品種（high oleic）油酸可達 75–91%，買時看標示"}, {"kind": "carrier", "zh": "金盞花浸泡油", "latin": ["Calendula officinalis"], "en": "Calendula", "part": "花", "method": [], "family": "菊科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Calendula", "fa": [], "faV": true, "faNote": "浸泡油（infused oil）：脂肪酸組成取決於「基底油」（常見為葵花油、橄欖油或荷荷芭油），植物本身不改變脂肪酸，請看產品標示的基底油"}, {"kind": "carrier", "zh": "聖約翰草浸泡油", "latin": ["Hypericum perforatum"], "en": "St. John's wort", "part": "花", "method": [], "family": "金絲桃科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:St. John's wort", "fa": [], "faV": true, "faNote": "浸泡油（infused oil）：脂肪酸組成取決於「基底油」（常見為葵花油、橄欖油或荷荷芭油），植物本身不改變脂肪酸，請看產品標示的基底油"}, {"kind": "carrier", "zh": "胡蘿蔔浸泡油", "latin": ["Daucus carota"], "en": "Carrot", "part": "根", "method": [], "family": "繖形科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Carrot", "fa": [], "faV": true, "faNote": "浸泡油（infused oil）：脂肪酸組成取決於「基底油」（常見為葵花油、橄欖油或荷荷芭油），植物本身不改變脂肪酸，請看產品標示的基底油"}, {"kind": "carrier", "zh": "山金車浸泡油", "latin": ["Arnica montana"], "en": "Arnica", "part": "花", "method": [], "family": "菊科", "type": "", "note": "", "latinNote": "", "isNew": true, "id": "carrier:Arnica", "fa": [], "faV": true, "faNote": "浸泡油（infused oil）：脂肪酸組成取決於「基底油」（常見為葵花油、橄欖油或荷荷芭油），植物本身不改變脂肪酸，請看產品標示的基底油"}, {"kind": "carrier", "zh": "琉璃苣油", "latin": ["Borago officinalis"], "en": "Borage", "part": "種子", "method": [], "family": "紫草科", "type": "", "note": "可少量塗抹於濕疹及牛皮癬", "latinNote": "", "isNew": false, "id": "carrier:Borage", "fa": [["亞油酸", "linoleic C18:2", "約 35%"], ["γ-亞麻酸", "GLA C18:3", "約 18%"], ["油酸", "oleic C18:1", "約 21%"], ["棕櫚酸", "palmitic C16:0", "約 11%"], ["硬脂酸", "stearic C18:0", "約 5%"], ["芥酸", "erucic C22:1", "約 2.6%"]], "faV": true, "faNote": "波蘭種子油研究（2017–2018 兩年平均；油酸含反油酸）"}, {"kind": "carrier", "zh": "沙棘油", "latin": ["Hippophae rhamnoides"], "en": "Sea buckthorn berry", "part": "果肉", "method": [], "family": "胡頹子科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Sea buckthorn berry", "fa": [["棕櫚油酸", "palmitoleic C16:1", "與棕櫚酸合計約 65%"], ["棕櫚酸", "palmitic C16:0", "（同上）"]], "faV": true, "faNote": "Wikipedia：果肉油以棕櫚油酸（omega-7）與棕櫚酸為主；種子油則以亞油酸、α-亞麻酸為主。市售沙棘「果油」多為果肉油，單項比例未取得"}, {"kind": "carrier", "zh": "橄欖油", "latin": ["Olea europaea"], "en": "Olive", "part": "果肉", "method": [], "family": "木樨科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Olive", "fa": [["油酸", "oleic C18:1", "55–83%"], ["棕櫚酸", "palmitic C16:0", "7.5–20%"], ["亞油酸", "linoleic C18:2", "3.5–21%"], ["硬脂酸", "stearic C18:0", "0.5–5%"]], "faV": true, "faNote": "Codex 橄欖油標準（CXS 33）範圍"}, {"kind": "carrier", "zh": "摩洛哥堅果油", "latin": ["Argania spinosa"], "en": "Argan", "part": "核籽", "method": [], "family": "山欖科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Argan", "fa": [["油酸", "oleic C18:1", "約 43%"], ["亞油酸", "linoleic C18:2", "約 37%"], ["棕櫚酸", "palmitic C16:0", "約 12%"], ["硬脂酸", "stearic C18:0", "約 6%"]], "faV": true, "faNote": "引自 Wikipedia 阿甘油條目的數字"}, {"kind": "carrier", "zh": "蓖麻油", "latin": ["Ricinus communis"], "en": "Castor", "part": "種子", "method": [], "family": "大戟科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Castor", "fa": [["蓖麻油酸", "ricinoleic C18:1-OH", "76–87%"], ["亞油酸", "linoleic C18:2", "5–6%"], ["油酸", "oleic C18:1", "2.7–4.2%"]], "faV": true, "faNote": "摩洛哥栽種蓖麻油研究；蓖麻油酸是羥基脂肪酸，所以黏稠"}, {"kind": "carrier", "zh": "亞麻籽油", "latin": ["Linum usitatissimum"], "en": "Linseed", "part": "種子", "method": [], "family": "亞麻科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Linseed", "fa": [["α-亞麻酸", "ALA C18:3", "約 47–71%"], ["油酸", "oleic C18:1", "約 10–22%"], ["亞油酸", "linoleic C18:2", "約 12–24%"], ["棕櫚酸", "palmitic C16:0", "4–6%"]], "faV": true, "faNote": "兩份資料（IENICA、DGF）範圍並列，ALA 差距大，取聯集範圍；極易氧化"}, {"kind": "carrier", "zh": "米糠油", "latin": ["Oryza sativa"], "en": "Rice bran", "part": "米糠", "method": [], "family": "禾本科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Rice bran", "fa": [["油酸", "oleic C18:1", "約 38%"], ["亞油酸", "linoleic C18:2", "約 34%"], ["棕櫚酸", "palmitic C16:0", "約 21.5%"], ["硬脂酸", "stearic C18:0", "約 2.9%"], ["α-亞麻酸", "linolenic C18:3", "約 2.2%"]], "faV": true, "faNote": "Wikipedia 米糠油條目"}, {"kind": "carrier", "zh": "紅花籽油", "latin": ["Carthamus tinctorius"], "en": "Safflower", "part": "種子", "method": [], "family": "菊科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Safflower", "fa": [["亞油酸", "linoleic C18:2", "67.8–83.2%"], ["油酸", "oleic C18:1", "8.4–21.3%"], ["棕櫚酸", "palmitic C16:0", "5.3–8%"], ["硬脂酸", "stearic C18:0", "1.9–2.9%"]], "faV": true, "faNote": "Codex 一般紅花油範圍；高油酸品種油酸 70–84%，買時看標示"}, {"kind": "carrier", "zh": "核桃油", "latin": ["Juglans regia"], "en": "Walnut", "part": "種子", "method": [], "family": "胡桃科", "type": "", "note": "", "latinNote": "", "isNew": false, "id": "carrier:Walnut", "fa": [["亞油酸", "linoleic C18:2", "約 57.5%"], ["油酸", "oleic C18:1", "約 21%"], ["α-亞麻酸", "linolenic C18:3", "約 11.6%"], ["棕櫚酸", "palmitic C16:0", "約 6.7%"], ["硬脂酸", "stearic C18:0", "約 2.3%"]], "faV": true, "faNote": "Wikipedia 食用油表（USDA 數據）"}, {"kind": "carrier", "zh": "辣木油", "latin": ["Moringa oleifera"], "en": "Moringa", "part": "種子", "method": [], "family": "辣木科", "type": "", "note": "", "latinNote": "", "isNew": true, "id": "carrier:Moringa", "fa": [["油酸", "oleic C18:1", "約 66%"], ["山嵛酸", "behenic C22:0", "約 6.5%"], ["異油酸", "vaccenic C18:1", "約 6%"], ["棕櫚酸", "palmitic C16:0", "約 6%"], ["硬脂酸", "stearic C18:0", "約 4.5%"]], "faV": true, "faNote": "Foods / OCL 期刊辣木籽油分析；山嵛酸含量偏高是特色"}, {"kind": "carrier", "zh": "南瓜籽油", "latin": ["Cucurbita pepo", "Cucurbita maxima"], "en": "Pumpkin Seed", "part": "種子", "method": [], "family": "葫蘆科", "type": "", "note": "", "latinNote": "", "isNew": true, "id": "carrier:Pumpkin Seed", "fa": [["亞油酸", "linoleic C18:2", "約 40%"], ["油酸", "oleic C18:1", "約 38%"], ["棕櫚酸", "palmitic C16:0", "約 11%"], ["硬脂酸", "stearic C18:0", "約 8.7%"]], "faV": true, "faNote": "JAST 期刊南瓜籽油分析；品種不同差異明顯"}];
+const DM={};D.forEach(o=>{DM[o.id]=o;});
+/* 英語化植物學唸法（大寫為重音音節） */
+const RESP={pinus:'PY-nus',sylvestris:'sil-VES-tris',cedrus:'SEE-drus',atlantica:'at-LAN-ti-ka',juniperus:'joo-NIP-er-us',communis:'ko-MYOO-nis',cupressus:'kyoo-PRES-us',sempervirens:'sem-per-VY-renz',boswellia:'boz-WEL-ee-a',carterii:'kar-TER-ee-eye',sacra:'SAY-kra',commiphora:'ko-MIF-or-a',myrrha:'MUR-a',eucalyptus:'yoo-ka-LIP-tus',globulus:'GLOB-yoo-lus',dives:'DY-veez',smithii:'SMITH-ee-eye',citriodora:'sit-ree-oh-DOR-a',melaleuca:'mel-a-LOO-ka',alternifolia:'al-ter-ni-FOH-lee-a',leucadendron:'loo-ka-DEN-dron',viridiflora:'vir-i-di-FLOR-a',quinquenervia:'kwin-kwe-NER-vee-a',myrtus:'MUR-tus',communis2:'',ocimum:'OS-i-mum',basilicum:'ba-SIL-i-kum',lavandula:'la-VAN-dyoo-la',angustifolia:'an-gus-ti-FOH-lee-a',hybrida:'HIB-ri-da',intermedia:'in-ter-MEE-dee-a',latifolia:'lat-i-FOH-lee-a',salvia:'SAL-vee-a',sclarea:'sklah-REE-a',thymus:'TY-mus',vulgaris:'vul-GAIR-is',rosmarinus:'roz-ma-RY-nus',officinalis:'o-fis-i-NAH-lis',mentha:'MEN-tha',piperita:'pi-per-EE-ta',spicata:'spy-KAH-ta',origanum:'o-RIG-a-num',majorana:'ma-jo-RAH-na',melissa:'me-LIS-a',pogostemon:'po-go-STEE-mon',cablin:'KAB-lin',helichrysum:'hel-i-KRY-sum',italicum:'i-TAL-i-kum',matricaria:'mat-ri-KAIR-ee-a',recutita:'re-kyoo-TY-ta',anthemis:'AN-the-mis',nobilis:'NOH-bi-lis',chamaemelum:'kam-ee-MEE-lum',nobile:'NOH-bi-lee',achillea:'a-KIL-ee-a',millefolium:'mil-ee-FOH-lee-um',foeniculum:'fee-NIK-yoo-lum',vulgare:'vul-GAIR-ee',coriandrum:'kor-ee-AN-drum',sativum:'sa-TY-vum',citrus:'SIT-rus',reticulata:'re-tik-yoo-LAH-ta',paradisi:'pa-ra-DY-sy',aurantifolia:'aw-ran-ti-FOH-lee-a',limon:'LY-mon',sinensis:'si-NEN-sis',aurantium:'aw-RAN-tee-um',bergamia:'ber-GAM-ee-a',rosa:'ROH-za',damascena:'dam-a-SEE-na',centifolia:'sen-ti-FOH-lee-a',jasminum:'jas-MY-num',grandiflorum:'gran-di-FLOR-um',officinale:'o-fis-i-NAH-lee',pelargonium:'pel-ar-GOH-nee-um',graveolens:'gra-vee-OH-lenz',asperum:'AS-per-um',cymbopogon:'sim-bo-POH-gon',citratus:'si-TRAH-tus',martini:'mar-TY-ny',vetiveria:'vet-i-VEER-ee-a',zizanioides:'zi-zan-ee-OY-deez',andropogon:'an-dro-POH-gon',zingiber:'ZIN-ji-ber',elettaria:'el-e-TAIR-ee-a',cardamomum:'kar-da-MOH-mum',piper:'PY-per',nigrum:'NY-grum',cananga:'ka-NANG-ga',odorata:'o-do-RAH-ta',santalum:'SAN-ta-lum',spicatum:'spy-KAH-tum',album:'AL-bum',austrocaledonicum:'aw-stroh-kal-e-DON-i-kum',styrax:'STY-raks',benzoin:'BEN-zoh-in',cinnamomum:'sin-a-MOH-mum',zeylanicum:'zay-LAN-i-kum',litsea:'LIT-see-a',cubeba:'kyoo-BEE-ba',ravensara:'ra-ven-SAR-a',aromatica:'ar-o-MAT-i-ka',aniba:'AN-i-ba',rosaeodora:'roh-zee-oh-DOR-a',picea:'PIS-ee-a',mariana:'mar-ee-AH-na',chamaecyparis:'kam-ee-SIP-a-ris',obtusa:'ob-TYOO-sa',agonis:'a-GOH-nis',fragrans:'FRAY-granz',leucadendra:'loo-ka-DEN-dra',spica:'SPY-ka',inula:'IN-yoo-la',dittrichia:'di-TRIK-ee-a',ferula:'FER-yoo-la',galbaniflua:'gal-ban-i-FLOO-a',limonum:'li-MOH-num',junos:'JOO-nos',chrysopogon:'kris-o-POH-gon',cassumunar:'kas-oo-MOO-nar',verum:'VEER-um',camphora:'KAM-for-a',copaifera:'koh-PAY-if-er-a',prunus:'PROO-nus',dulcis:'DUL-sis',amygdalus:'a-MIG-da-lus',armeniaca:'ar-men-ee-AH-ka',persica:'PER-si-ka',persea:'PER-see-a',americana:'a-mer-i-KAH-na',oenothera:'ee-NOTH-er-a',biennis:'by-EN-is',vitis:'VY-tis',vinifera:'vi-NIF-er-a',simmondsia:'si-MOND-see-a',chinensis:'chi-NEN-sis',triticum:'TRIT-i-kum',aestivum:'ess-TY-vum',cocos:'KOH-kos',nucifera:'nyoo-SIF-er-a',macadamia:'mak-a-DAY-mee-a',integrifolia:'in-teg-ri-FOH-lee-a',tetraphylla:'tet-ra-FIL-a',corylus:'KOR-i-lus',avellana:'av-e-LAH-na',sesamum:'SES-a-mum',indicum:'IN-di-kum',rubiginosa:'roo-bi-gi-NOH-sa',moschata:'mos-KAH-ta',camellia:'ka-MEE-lee-a',oleifera:'oh-lee-IF-er-a',helianthus:'hee-lee-AN-thus',annuus:'AN-yoo-us',calendula:'ka-LEN-dyoo-la',hypericum:'hy-PER-i-kum',perforatum:'per-for-AH-tum',daucus:'DAW-kus',carota:'ka-ROH-ta',arnica:'AR-ni-ka',montana:'mon-TAH-na',borago:'bo-RAH-go',hippophae:'hi-POH-fee',rhamnoides:'ram-NOY-deez',olea:'OH-lee-a',europaea:'yoo-ROH-pee-a',argania:'ar-GAH-nee-a',spinosa:'spy-NOH-sa',ricinus:'RIS-i-nus',linum:'LY-num',usitatissimum:'yoo-si-ta-TIS-i-mum',oryza:'o-RY-za',sativa:'sa-TY-va',carthamus:'KAR-tha-mus',tinctorius:'tink-TOR-ee-us',juglans:'JOO-glanz',regia:'REE-jee-a',moringa:'mo-RING-ga',cucurbita:'kyoo-KUR-bi-ta',pepo:'PEE-poh',maxima:'MAK-si-ma'};
+const FIELDS=[['latin','拉丁學名'],['en','英文名'],['part','萃取部位'],['method','萃取方法'],['family','科別'],['type','主要成分類型']];
+const FIELDS_C=FIELDS.filter(f=>['latin','en','part','family'].includes(f[0]));
+const fieldsFor=o=>o.kind==='carrier'?FIELDS_C:FIELDS;
+const labelOf=(f,l,o)=>(f==='family'&&o.kind==='carrier')?'科屬':l;
+const INTERVALS=[1,2,4,7,14,30];
+const LV_DESC={1:'L1 缺 1 個字母',2:'L2 缺約 1/4 字母',3:'L3 缺約一半字母',4:'L4 只給每個字的首字母',5:'L5 完整默寫'};
+
+/* ---------- helpers ---------- */
+const $=(s,r)=> (r||document).querySelector(s);
+function el(t,a,...c){const n=document.createElement(t);if(a)for(const k in a){const v=a[k];if(k==='class')n.className=v;else if(k.slice(0,2)==='on')n.addEventListener(k.slice(2),v);else if(k==='html')n.innerHTML=v;else if(v!==false&&v!=null)n.setAttribute(k,v);}
+  c.flat(9).forEach(x=>{if(x==null||x===false)return;n.append(x.nodeType?x:document.createTextNode(x));});return n;}
+function hashStr(s){let h=1779033703^s.length;for(let i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=h<<13|h>>>19;}return()=>{h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);return(h^=h>>>16)>>>0;};}
+function rng(seed){let a=hashStr(String(seed))();return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function shuffle(a,r){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+const pad=n=>String(n).padStart(2,'0');
+const ymd=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const todayStr=()=>ymd(new Date());
+function addDays(s,n){const d=new Date(+s.slice(0,4),+s.slice(5,7)-1,+s.slice(8,10)+n);return ymd(d);}
+const uniq=a=>[...new Set(a)];
+const nk=s=>s.toLowerCase().replace(/[^a-z0-9]/g,'');
+const nl=s=>s.toLowerCase().replace(/\s+/g,' ').trim();
+function lev(a,b){const m=a.length,n=b.length;if(!m)return n;const d=Array.from({length:m+1},(_,i)=>[i]);for(let j=1;j<=n;j++)d[0][j]=j;for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[m][n];}
+
+/* ---------- state ---------- */
+const KEY='ifa-oils-v1';
+const DEF={cases:{},card:{},latin:{},en:{},log:{},sess:null,rounds:{},set:{perDay:8,blanks:3,input:'chips',latin:'auto',en:'auto',pool:'all',voice:'en',slow:false,auto:true,remind:'21:00'}};
+let S;
+try{S=JSON.parse(localStorage.getItem(KEY)||'null');}catch(e){S=null;}
+const S0=S;S=Object.assign({},DEF,S0||{});S.set=Object.assign({},DEF.set,S.set||{});S.en=S.en||{};S.cases=S.cases||{};
+const OLD_EN=["Pine needles (Scotch Pine)", "Atlas cedarwood", "Juniper berry", "Cypress", "Frankincense", "Myrrh", "Eucalyptus, blue gum", "Eucalyptus, broad leaf", "Eucalyptus, gully gum", "Eucalyptus, lemon", "Tea tree", "Cajeput", "Niaouli", "Niaouli CT. linalool", "Niaouli CT. nerolidol", "Niaouli CT. cineole", "Myrtle", "Basil ct. linalool", "Lavender", "Lavandin", "Spike lavender", "Clary sage", "Thyme (CT. thujanol)", "Thyme (CT. linalool)", "Thyme (CT. geraniol)", "Thyme (CT. thymol)", "Rosemary (CT. cineole)", "Rosemary (CT. verbenone)", "Rosemary (CT. camphor)", "Peppermint", "Spearmint", "Sweet marjoram", "Melissa", "Patchouli", "Immortelle/ Helichrysum", "German chamomile", "Roman chamomile", "Yarrow", "Sweet fennel", "Coriander", "Mandarin", "Grapefruit", "Lime", "Lemon", "Orange, sweet", "Neroli", "Petitgrain", "Orange, bitter", "Bergamot", "Damask rose", "Rose cabbage", "Jasmine", "Geranium bourbon", "Lemongrass", "Palmarosa", "Vetiver", "Ginger", "Cardamom", "Black pepper", "Ylang ylang", "Sandalwood australian", "Sandalwood mysore", "Sandalwood pacific", "Benzoin", "Cinnamon", "May chang", "Ravensara", "Rosewood"];
+if(S0&&S0.v!==2){const mv=m=>{const n={};for(const k in m||{}){const en=OLD_EN[+k];if(en!=null&&DM['ess:'+en])n['ess:'+en]=m[k];}return n;};S.card=mv(S.card);S.latin=mv(S.latin);S.en=mv(S.en);S.sess=null;S.rounds={};}
+S.v=2;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+let tab='today',toastT;
+function toast(m){const old=$('.toast');if(old)old.remove();const t=el('div',{class:'toast',role:'status'},m);document.body.append(t);clearTimeout(toastT);toastT=setTimeout(()=>t.remove(),2600);}
+
+/* ---------- data ---------- */
+const PART_ALIAS={葉片:'葉',種籽:'種子',根部:'根'};
+const bank={};['ess','carrier'].forEach(k=>{const L=D.filter(o=>o.kind===k);bank[k]={part:uniq(L.map(o=>o.part)),method:['蒸餾','壓榨','溶劑','CO2'],family:uniq(L.map(o=>o.family)),type:uniq(L.map(o=>o.type))};});
+const canon=(f,v)=>{v=(v||'').trim();if(f==='part')return PART_ALIAS[v]||v;if(f==='family')return v.replace(/科$/,'');return v;};
+function answers(f,o){return f==='method'?o.method:f==='latin'?o.latin:[o[f]];}
+const showAns=(f,o)=>f==='method'?o.method.join('／'):f==='latin'?o.latin.join(' / '):o[f];
+function enAccept(en){const set=new Set();const ct=/\bct\b/i.test(en);set.add(nk(en));set.add(nk(en.replace(/\bct\.?\s*/i,'')));
+  if(!ct){set.add(nk(en.replace(/\(.*?\)/g,'')));const p=en.match(/\((.*?)\)/);if(p)set.add(nk(p[1]));en.split('/').forEach(x=>set.add(nk(x)));}
+  set.delete('');return[...set];}
+
+/* ---------- speech ---------- */
+function pickVoice(lang){if(!('speechSynthesis' in window))return null;const vs=speechSynthesis.getVoices();const p=lang.slice(0,2);
+  return vs.find(v=>v.lang.replace('_','-')===lang)||vs.find(v=>v.lang.toLowerCase().startsWith(p))||null;}
+function speak(text,forceSlow,forceLang){
+  if(!('speechSynthesis' in window)){toast('這個瀏覽器不支援語音');return;}
+  speechSynthesis.cancel();
+  let lang=forceLang||(S.set.voice==='it'?'it-IT':'en-US'),v=pickVoice(lang);
+  if(!v&&lang==='it-IT'){lang='en-US';v=pickVoice(lang);toast('找不到義大利語語音，改用英語唸法');}
+  const u=new SpeechSynthesisUtterance(text);u.lang=lang;if(v)u.voice=v;u.rate=(forceSlow||S.set.slow)?0.5:0.85;
+  speechSynthesis.speak(u);}
+if('speechSynthesis' in window){try{speechSynthesis.getVoices();speechSynthesis.addEventListener('voiceschanged',()=>{});}catch(e){}}
+const ICON_SPK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+function spkBtns(name,lang){return[el('button',{class:'spk',type:'button','aria-label':'播放發音',title:'播放發音',html:ICON_SPK,onclick:e=>{e.stopPropagation();speak(name,false,lang);}}),
+  el('button',{class:'spk slow',type:'button','aria-label':'慢速播放',onclick:e=>{e.stopPropagation();speak(name,true,lang);}},'慢')];}
+function respell(name){const out=[];name.split(' ').forEach((w,wi)=>{const r=RESP[w.toLowerCase()];if(!r)return;
+  if(wi)out.push(' ');r.split('-').forEach((s,i)=>{if(i)out.push('-');out.push(/^[A-Z]+$/.test(s)?el('b',null,s):s);});});return out;}
+const cleanEn=t=>t.replace(/\bCT\.?/gi,'chemotype').replace(/[()\/]/g,', ');
+function enPron(o){return el('div',{class:'pron'},spkBtns(cleanEn(o.en),'en-US'));}
+function pronBlock(o){const a=o.latin[0];return el('div',{class:'pron'},spkBtns(a),el('span',null,respell(a)));}
+
+/* ---------- Latin input (levels 1-5) ---------- */
+function letterInput(target,level,seed){
+  const words=target.split(' ');
+  const r=rng(seed+'|'+level);const elig=[];let n=0;
+  words.forEach(w=>{let first=true;[...w].forEach(c=>{if(/[A-Za-z]/.test(c)){if(!first)elig.push(n);first=false;n++;}});});
+  const blank=new Set();
+  if(level<=3){const cnt=level===1?1:level===2?Math.max(2,Math.round(n*.25)):Math.round(n*.5);shuffle(elig,r).slice(0,Math.min(cnt,elig.length)).forEach(i=>blank.add(i));}
+  else elig.forEach(i=>blank.add(i));
+  const inputs=[];let gi=0,fresh;
+  const box=el('div',{class:'lat-boxes'});
+  words.forEach(w=>{const wd=el('div',{class:'lat-word'});fresh=true;[...w].forEach(c=>{
+    if(!/[A-Za-z]/.test(c)){wd.append(el('span',{class:'lb p'},c));return;}
+    const idx=gi++;
+    if(blank.has(idx)){const inp=el('input',{class:'lb',type:'text',maxlength:'2',autocomplete:'off',autocapitalize:'off',autocorrect:'off',spellcheck:'false','aria-label':'填入缺的字母','data-c':c});
+      inp.addEventListener('input',()=>{inp.value=inp.value.replace(/[^A-Za-z]/g,'').slice(-1).toLowerCase();if(inp.value){const k=inputs.indexOf(inp);if(inputs[k+1])inputs[k+1].focus();}});
+      inp.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!inp.value){const k=inputs.indexOf(inp);if(inputs[k-1])inputs[k-1].focus();}});
+      inp.addEventListener('focus',()=>{try{inp.select();}catch(e){}});
+      inputs.push(inp);wd.append(inp);}
+    else wd.append(el('span',{class:'lb'},c));});box.append(wd);});
+  return{node:box,focus:()=>inputs[0]&&inputs[0].focus(),
+    check(){let ok=true;inputs.forEach(i=>{if(i.value.toLowerCase()!==i.dataset.c.toLowerCase())ok=false;});return{ok};},
+    lock(){inputs.forEach(i=>{const good=i.value.toLowerCase()===i.dataset.c.toLowerCase();i.replaceWith(el('span',{class:'lb '+(good?'ok':'bad')},good?i.dataset.c:(i.value||'·')));});}};
+}
+function latinInput(o,level,seed){
+  if(level<5)return letterInput(o.latin[0],level,seed);
+  const inp=el('input',{class:'txt latin',id:'lat-free',type:'text',autocomplete:'off',autocapitalize:'off',spellcheck:'false',placeholder:'完整寫出學名'});
+  const acc=o.latin.map(nl);
+  return{node:inp,focus:()=>inp.focus(),check(){return{ok:acc.includes(nl(inp.value))};},lock(){inp.disabled=true;}};
+}
+function enField(o,level,seed){return level<5?letterInput(o.en,level,seed):enInput(o);}
+/* ---------- other inputs ---------- */
+function enInput(o){
+  const inp=el('input',{class:'txt',type:'text',autocomplete:'off',autocapitalize:'off',spellcheck:'false',placeholder:'輸入英文名'});
+  const acc=enAccept(o.en);let hint=el('div',{class:'note',hidden:true});
+  const hb=el('button',{class:'hintbtn',type:'button',onclick:()=>{hint.hidden=false;hint.textContent='提示：'+o.en.slice(0,1).toUpperCase()+' … 共 '+o.en.replace(/[^A-Za-z]/g,'').length+' 個字母';}},'給我提示');
+  return{node:el('div',null,inp,hb,hint),focus:()=>inp.focus(),
+    check(){const v=nk(inp.value);if(!v)return{ok:false};if(acc.includes(v))return{ok:true};
+      if(v.length>=8&&acc.some(a=>lev(a,v)<=1))return{ok:true,note:'拼字有一點出入'};return{ok:false};},
+    lock(){inp.disabled=true;hb.hidden=true;hint.hidden=true;}};
+}
+function chipInput(f,o,seed){
+  let sel=null;const slot=el('button',{class:'slot',type:'button'},'');const chips=el('div',{class:'chips'});
+  shuffle(bank[o.kind][f],rng(seed+'|'+f)).forEach(v=>chips.append(el('button',{class:'chip',type:'button',onclick:()=>{sel=v;paint();}},v)));
+  slot.addEventListener('click',()=>{sel=null;paint();});
+  function paint(){slot.textContent=sel||'點下方選項填入';slot.classList.toggle('filled',!!sel);[...chips.children].forEach(c=>c.classList.toggle('on',c.textContent===sel));}
+  paint();const acc=answers(f,o).map(a=>canon(f,a));const node=el('div',null,slot,chips);
+  return{node,focus(){},check(){return{ok:!!sel&&acc.includes(canon(f,sel))};},lock(){slot.disabled=true;chips.hidden=true;}};
+}
+function typeInput(f,o){
+  const inp=el('input',{class:'txt',type:'text',autocomplete:'off',spellcheck:'false',placeholder:'輸入答案'});
+  const acc=answers(f,o).map(a=>canon(f,a));
+  return{node:inp,focus:()=>inp.focus(),check(){return{ok:acc.includes(canon(f,inp.value))};},lock(){inp.disabled=true;}};
+}
+function latinLevel(o){return S.set.latin==='auto'?(S.latin[o.id]||1):+S.set.latin;}
+function enLevel(o){return S.set.en==='auto'?(S.en[o.id]||1):+S.set.en;}
+
+/* ---------- Leitner ---------- */
+function applyResult(o,ok,latinTried,latinOk,practice,enTried,enOk){
+  if(practice)return;
+  const t=todayStr(),c=S.card[o.id]||{b:0};
+  const b=ok?Math.min(5,(c.b||0)+1):Math.max(0,(c.b||0)-2);
+  S.card[o.id]={b,due:addDays(t,INTERVALS[b])};
+  if(latinTried&&S.set.latin==='auto'){const lv=S.latin[o.id]||1;S.latin[o.id]=latinOk?Math.min(5,lv+1):Math.max(1,lv-1);}
+  if(enTried&&S.set.en==='auto'){const lv=S.en[o.id]||1;S.en[o.id]=enOk?Math.min(5,lv+1):Math.max(1,lv-1);}
+  const L=S.log[t]=S.log[t]||{n:0,ok:0};L.n++;if(ok)L.ok++;
+  save();
+}
+function streak(){let t=todayStr(),n=0;if(!S.log[t])t=addDays(t,-1);while(S.log[t]&&S.log[t].n>0){n++;t=addDays(t,-1);}return n;}
+
+/* ---------- Session ---------- */
+const pool=()=>D.filter(o=>S.set.pool==='all'||o.kind===S.set.pool);
+function pickIds(n,seed){
+  const t=todayStr(),r=rng(seed);
+  const due=pool().filter(o=>S.card[o.id]&&S.card[o.id].due<=t).sort((a,b)=>S.card[a.id].b-S.card[b.id].b||S.card[a.id].due.localeCompare(S.card[b.id].due));
+  const fresh=shuffle(pool().filter(o=>!S.card[o.id]),r);
+  const rest=shuffle(pool().filter(o=>S.card[o.id]&&S.card[o.id].due>t),r).sort((a,b)=>S.card[a.id].b-S.card[b.id].b);
+  const maxDue=fresh.length?Math.max(n-3,Math.ceil(n/2)):n;
+  const ids=shuffle(due,r).slice(0,maxDue).map(o=>o.id);
+  [...fresh,...shuffle(due,r).filter(o=>!ids.includes(o.id)),...rest].forEach(o=>{if(ids.length<n&&!ids.includes(o.id))ids.push(o.id);});
+  return shuffle(ids,r);
+}
+function plan(o,seed){
+  const r=rng(seed+'|'+o.id);const all=fieldsFor(o).map(f=>f[0]);const fs=all.filter(f=>f!=='latin');
+  const k=Math.min(S.set.blanks,fs.length);let list=[],need=k;if(r()<0.8){list.push('latin');need--;}
+  list.push(...shuffle(fs,r).slice(0,need));
+  return all.filter(f=>list.includes(f));
+}
+function startSession(ids,practice){
+  const t=todayStr();S.rounds[t]=(S.rounds[t]||0)+1;const seed=t+'#'+S.rounds[t]+'#'+Math.random().toString(36).slice(2);
+  const list=ids||pickIds(S.set.perDay,seed);
+  S.sess={date:t,round:S.rounds[t],practice:!!practice,items:list.map(id=>({id,blanks:plan(DM[id],seed),level:latinLevel(DM[id]),enLevel:enLevel(DM[id]),seed})),res:[]};
+  save();render();
+}
+
+/* ---------- Views ---------- */
+function header(title,sub){return el('div',{class:'top'},el('div',null,el('div',{class:'eyebrow'},el('span',{html:SPRIG}),sub),el('h1',null,title)),el('div',{class:'streak'},'連續 ',el('b',null,streak()),' 天'));}
+const WEEK=['日','一','二','三','四','五','六'];
+function dateLabel(){const d=new Date();return (d.getMonth()+1)+' 月 '+d.getDate()+' 日 週'+WEEK[d.getDay()];}
+
+function viewToday(root){
+  const t=todayStr(),s=S.sess;
+  if(!s||s.date!==t){
+    const due=pool().filter(o=>S.card[o.id]&&S.card[o.id].due<=t).length,fresh=pool().filter(o=>!S.card[o.id]).length,mastered=pool().filter(o=>S.card[o.id]&&S.card[o.id].b>=4).length;
+    root.append(header('今日背誦',dateLabel()));
+    root.append(el('p',{class:'muted'},'每天抽出不同的欄位挖空；學名和英文名依每支精油／植物油各自的熟練度升降級。'));
+    root.append(el('div',{class:'stats'},stat(due,'今日到期'),stat(fresh,'尚未背過'),stat(mastered+'/'+pool().length,'已熟練')));
+    root.append(el('button',{class:'btn block',type:'button',onclick:()=>startSession()},'開始今日 '+S.set.perDay+' 題'));
+    root.append(el('div',{class:'sec'},el('h2',null,'背誦進度'),mapView()));
+    return;
+  }
+  const done=s.res.length;
+  if(done<s.items.length){
+    root.append(header(s.practice?'錯題重練':'今日背誦',dateLabel()+(s.practice?' · 不計入複習排程':' · 第 '+s.round+' 輪')));
+    root.append(el('div',{class:'prog'},el('i',{style:'width:'+(done/s.items.length*100)+'%'})));
+    root.append(cardView(s.items[done],done,s.items.length));
+    return;
+  }
+  // summary
+  const ok=s.res.filter(r=>r.ok).length,miss=s.res.filter(r=>!r.ok).map(r=>r.id);
+  root.append(header(s.practice?'錯題重練完成':'今天背完了',dateLabel()));
+  root.append(el('div',{class:'score'},ok+' / '+s.res.length));
+  root.append(el('p',{class:'muted'},miss.length?'有 '+miss.length+' 張需要再看一次，明天會再出現。':'全部答對。'));
+  const list=el('div',null);
+  s.res.forEach(r=>{const o=DM[r.id];list.append(el('div',{class:'sumrow'},el('span',{class:'mk '+(r.ok?'ok':'bad')},r.ok?'✓':'✗'),el('div',null,el('div',null,o.zh),el('div',{class:'lat'},o.latin[0])),el('div',{class:'pron'},spkBtns(o.latin[0]))));});
+  root.append(list);
+  const b=el('div',{class:'btns'});
+  if(miss.length)b.append(el('button',{class:'btn',type:'button',onclick:()=>startSession(miss,true)},'只練錯題（'+miss.length+'）'));
+  b.append(el('button',{class:'btn ghost',type:'button',onclick:()=>startSession()},'再來 '+S.set.perDay+' 題'));
+  root.append(b);
+  root.append(el('div',{class:'sec'},el('h2',null,'背誦進度'),mapView()));
+}
+function stat(n,l){return el('div',{class:'stat'},el('b',null,n),el('span',null,l));}
+function mapView(){
+  const wrap=el('div',null);
+  [['ess','精油'],['carrier','植物油']].forEach(([k,l])=>{
+    if(S.set.pool!=='all'&&S.set.pool!==k)return;
+    const m=el('div',{class:'map',role:'img','aria-label':l+'熟練度，每個點代表一支，顏色越深越熟'});
+    D.filter(o=>o.kind===k).forEach(o=>{const c=S.card[o.id];m.append(el('i',{class:'dot'+(c?' b'+c.b:''),title:o.zh}));});
+    wrap.append(el('div',{class:'mapg'},l),m);});
+  wrap.append(el('div',{class:'legend'},...[['','未背'],['b0','不熟'],['b1','1–2'],['b3','3–4'],['b5','熟練']].map(([c,l])=>el('span',null,el('i',{class:'dot '+c}),l))));
+  return wrap;
+}
+
+function cardView(item,idx,total){
+  const o=DM[item.id],blank=new Set(item.blanks),comps=[];
+  const card=el('section',{class:'card'});
+  card.append(el('div',{class:'card-h'},el('span',null,'標本 '+pad(idx+1)+' / '+pad(total)),el('span',null,blank.has('family')?'':o.family,o.kind==='carrier'?el('span',{class:'tag oil'},'植物油'):null,o.isNew?el('span',{class:'tag'},'新增'):null)));
+  card.append(el('div',{class:'name'},o.zh));
+  fieldsFor(o).forEach(([f,lb])=>{
+    const label=labelOf(f,lb,o);const row=el('div',{class:'row'});row.append(el('div',{class:'lab'},label));
+    const val=el('div',{class:'val'});row.append(val);const fb=el('div',{class:'fb'});
+    if(blank.has(f)){
+      let c;
+      if(f==='latin')c=latinInput(o,item.level,item.seed+'|'+o.id);
+      else if(f==='en')c=enField(o,item.enLevel||1,item.seed+'|'+o.id+'|en');
+      else c=S.set.input==='chips'?chipInput(f,o,item.seed+'|'+o.id):typeInput(f,o);
+      val.append(c.node);comps.push({f,c,row,fb,val});
+    }else{
+      if(f==='latin'){val.append(el('div',{class:'lat'},o.latin.join(' / ')),pronBlock(o));if(o.latinNote)val.append(el('div',{class:'note'},o.latinNote));}
+      else{val.append(el('span',{class:f==='en'?'en':''},showAns(f,o)));if(f==='en')val.append(enPron(o));}
+    }
+    card.append(row);
+    if(blank.has(f))row.append(fb);
+  });
+  if(!comps.length)comps.push();
+  const lvTxt=[blank.has('latin')?'學名 '+LV_DESC[Math.min(5,item.level)]:'',blank.has('en')?'英文名 '+LV_DESC[Math.min(5,item.enLevel||1)]:''].filter(Boolean).join('　｜　');
+  const lvTag=lvTxt?el('div',{class:'cue'},lvTxt):null;
+  const nextBox=el('div',{class:'btns'});
+  const check=el('button',{class:'btn block',type:'button'},'檢查答案');
+  check.addEventListener('click',()=>{
+    let allOk=true,latinTried=false,latinOk=false,enTried=false,enOk=false;
+    comps.forEach(({f,c,row,fb,val})=>{
+      const r=c.check();c.lock();row.classList.add(r.ok?'ok':'bad');if(!r.ok)allOk=false;
+      if(f==='latin'){latinTried=true;latinOk=r.ok;
+        fb.append(el('div',{class:'lat'},o.latin.join(' / ')),pronBlock(o));if(o.latinNote)fb.append(el('div',{class:'note'},o.latinNote));}
+      else{ if(f==='en'){enTried=true;enOk=r.ok;} fb.textContent=r.ok?(r.note||'正確'):'正解：'+showAns(f,o);if(f==='en')fb.append(enPron(o));}
+    });
+    if(!comps.length)allOk=true;
+    if(o.comp&&o.comp.length)card.append(el('div',{class:'note'},'主要成分：'+compShort(o)+(o.compV?'':'（教材常見）')));
+    if(o.fa&&o.fa.length)card.append(el('div',{class:'note'},'脂肪酸：'+o.fa.slice(0,3).map(f=>f[0]+f[2]).join('、')+(o.faV?'':'（教材常見）')));
+    if(o.note){card.append(el('div',{class:'note'},'備註：'+o.note));}
+    applyResult(o,allOk,latinTried,latinOk,S.sess.practice,enTried,enOk);
+    S.sess.res.push({id:o.id,ok:allOk});save();
+    if(latinTried&&S.set.auto)speak(o.latin[0]);
+    check.remove();
+    nextBox.append(el('button',{class:'btn block',type:'button',onclick:()=>{render();window.scrollTo(0,0);}},idx+1<total?'下一張':'看今日成績'));
+  });
+  card.append(el('div',{class:'btns'},check));
+  card.append(nextBox);
+  if(lvTag)card.insertBefore(lvTag,card.children[2]);
+  setTimeout(()=>{const first=comps[0];if(first&&first.f!=='family'&&first.c.focus&&!matchMedia('(pointer:coarse)').matches)first.c.focus();},30);
+  return card;
+}
+
+/* ---------- Latin practice tab ---------- */
+let lpLast=[],lpStat={n:0,ok:0},lpCur=null;
+function viewLatin(root){
+  root.append(header('拉丁學名練習','由簡到難 · 附發音'));
+  const seg=el('div',{class:'seg'});
+  [['auto','自動'],[1,'L1'],[2,'L2'],[3,'L3'],[4,'L4'],[5,'L5']].forEach(([v,l])=>seg.append(el('button',{type:'button',class:String(S.set.latin)===String(v)?'on':'',onclick:()=>{S.set.latin=v;save();lpCur=null;render();}},l)));
+  root.append(seg);
+  root.append(el('div',{class:'lvdesc'},S.set.latin==='auto'?'自動：每支精油／植物油各自升降級，答對升一級，答錯降一級。':LV_DESC[S.set.latin]+'，所有精油固定此難度。'));
+  if(!lpCur){const r=Math.random;const P=pool();let o;do{o=P[Math.floor(r()*P.length)];}while(lpLast.includes(o.id)&&P.length>9);lpLast.push(o.id);if(lpLast.length>8)lpLast.shift();lpCur={o,lv:latinLevel(o),seed:String(r())};}
+  const {o,lv,seed}=lpCur;
+  const card=el('section',{class:'card sec'});
+  card.append(el('div',{class:'card-h'},el('span',null,'已答 '+lpStat.n+' · 答對 '+lpStat.ok),el('span',null,LV_DESC[lv].slice(0,2))));
+  card.append(el('div',{class:'name'},o.zh));
+  card.append(el('div',{class:'cue'},'英文名　'+o.en),enPron(o));
+  const c=latinInput(o,lv,seed);const holder=el('div',{class:'row'},el('div',{class:'lab'},'拉丁學名'),el('div',{class:'val'},c.node));
+  const fb=el('div',{class:'fb'});holder.append(fb);card.append(holder);
+  const act=el('div',{class:'btns'});
+  const chk=el('button',{class:'btn block',type:'button'},'檢查');
+  chk.addEventListener('click',()=>{
+    const r=c.check();c.lock();holder.classList.add(r.ok?'ok':'bad');lpStat.n++;if(r.ok)lpStat.ok++;
+    if(S.set.latin==='auto'){S.latin[o.id]=r.ok?Math.min(5,(S.latin[o.id]||1)+1):Math.max(1,(S.latin[o.id]||1)-1);save();}
+    fb.append(el('div',{class:'lat'},o.latin.join(' / ')),pronBlock(o));if(o.latinNote)fb.append(el('div',{class:'note'},o.latinNote));
+    if(S.set.auto)speak(o.latin[0]);
+    chk.remove();act.append(el('button',{class:'btn block',type:'button',onclick:()=>{lpCur=null;render();}},'下一題'));
+  });
+  act.append(chk);card.append(act);root.append(card);
+  setTimeout(()=>{if(!matchMedia('(pointer:coarse)').matches&&c.focus)c.focus();},30);
+}
+
+/* ---------- Library ---------- */
+const badgeLv=o=>'學名 L'+(S.latin[o.id]||1)+' · 英文 L'+(S.en[o.id]||1);
+function lvCtl(o,key,onChange){
+  const t=el('span',{class:'lvtxt'},'');const paint=()=>{t.textContent=LV_DESC[S[key][o.id]||1];};
+  const bump=d=>{S[key][o.id]=Math.max(1,Math.min(5,(S[key][o.id]||1)+d));save();paint();onChange&&onChange();};
+  paint();
+  const wrap=el('div',null,el('div',{class:'lvctl'},el('button',{class:'spk slow',type:'button','aria-label':'降一級',onclick:()=>bump(-1)},'−'),t,el('button',{class:'spk slow',type:'button','aria-label':'升一級',onclick:()=>bump(1)},'＋')));
+  if(S.set[key]!=='auto')wrap.append(el('div',{class:'note'},'目前設定是固定難度，改成「自動」後才會用這支自己的等級。'));
+  return wrap;
+}
+let libQ='',libF='',libK='all';
+function viewLib(root){
+  const nE=D.filter(o=>o.kind==='ess').length,nC=D.length-nE;
+  root.append(header('圖鑑','精油 '+nE+' · 植物油 '+nC));
+  const kseg=el('div',{class:'seg',style:'margin-bottom:14px'});
+  [['all','全部'],['ess','精油'],['carrier','植物油']].forEach(([v,l])=>kseg.append(el('button',{type:'button',class:libK===v?'on':'',onclick:()=>{libK=v;libF='';render();}},l)));
+  const fams=uniq(D.filter(o=>libK==='all'||o.kind===libK).map(o=>o.family));
+  const q=el('input',{class:'txt',id:'libq',type:'search',placeholder:'搜尋中文、學名、英文',value:libQ,'aria-label':'搜尋'});
+  const sel=el('select',{id:'libf','aria-label':'科別篩選'},el('option',{value:''},'全部科別'),...fams.map(f=>el('option',{value:f,selected:f===libF},f)));
+  const list=el('div',{class:'lib'});
+  function paint(){list.textContent='';const k=libQ.trim().toLowerCase();
+    D.filter(o=>(libK==='all'||o.kind===libK)&&(!libF||o.family===libF)&&(!k||(o.zh+o.en+o.latin.join(' ')+(o.comp?o.comp.map(c=>c.join(' ')).join(' '):'')).toLowerCase().includes(k))).forEach(o=>{
+      const lvSpan=el('small',null,badgeLv(o));const upd=()=>{lvSpan.textContent=badgeLv(o);};
+      const b=el('div',{class:'lib-b',hidden:true},el('dl',{class:'kv'},...fieldsFor(o).flatMap(([f,l])=>[el('dt',null,labelOf(f,l,o)),el('dd',null,f==='latin'?el('span',{class:'lat'},showAns(f,o)):f==='en'?el('div',null,showAns(f,o),enPron(o)):showAns(f,o))]),o.comp&&o.comp.length?[el('dt',null,'主要成分'),el('dd',null,compBlock(o))]:null,o.faNote!==undefined?[el('dt',null,'脂肪酸組成'),el('dd',null,faBlock(o))]:null,el('dt',null,'發音'),el('dd',null,pronBlock(o)),o.latinNote?[el('dt',null,'學名備註'),el('dd',null,o.latinNote)]:null,o.note?[el('dt',null,'備註'),el('dd',null,o.note)]:null,el('dt',null,'學名難度'),el('dd',null,lvCtl(o,'latin',upd)),el('dt',null,'英文名難度'),el('dd',null,lvCtl(o,'en',upd))));
+      const h=el('button',{class:'lib-h',type:'button','aria-expanded':'false',onclick:()=>{b.hidden=!b.hidden;h.setAttribute('aria-expanded',String(!b.hidden));}},el('span',null,el('span',{class:'z'},o.zh,o.isNew?el('span',{class:'tag'},'新增'):null,o.kind==='carrier'?el('span',{class:'tag oil'},'植物油'):null),el('span',{class:'lat'},o.latin[0])),el('span',{class:'muted lvbadge'},o.family,el('br'),lvSpan));
+      list.append(el('div',{class:'lib-i'},h,b));});
+    if(!list.children.length)list.append(el('p',{class:'muted'},'沒有符合的項目。'));}
+  q.addEventListener('input',()=>{libQ=q.value;paint();});sel.addEventListener('change',()=>{libF=sel.value;paint();});
+  root.append(kseg,el('div',{class:'find'},q,sel),list);paint();
+}
+
+/* ---------- Settings ---------- */
+function refreshSession(){
+  const s=S.sess;if(!s||s.date!==todayStr())return;
+  if(s.res.length===0&&!s.practice){S.rounds[s.date]=Math.max(0,(S.rounds[s.date]||1)-1);S.sess=null;save();return;}
+  s.items.forEach((it,i)=>{if(i>=s.res.length){const o=DM[it.id];it.blanks=plan(o,it.seed);it.level=latinLevel(o);it.enLevel=enLevel(o);}});save();}
+const QKEYS=['perDay','blanks','input','latin','en','pool'];
+function segSet(key,opts,after){const s=el('div',{class:'seg'});opts.forEach(([v,l])=>s.append(el('button',{type:'button',class:S.set[key]===v?'on':'',onclick:()=>{S.set[key]=v;save();if(QKEYS.includes(key)){refreshSession();lpCur=null;}(after||render)();toast('已儲存並套用');}},l)));return s;}
+function setRow(label,ctrl,hint){return el('div',{class:'set'},el('div',{class:'l'},label),ctrl,hint?el('div',{class:'muted'},hint):null);}
+function buildICS(time){
+  const [h,m]=time.split(':').map(Number),d=new Date();d.setHours(h,m,0,0);if(d<new Date())d.setDate(d.getDate()+1);
+  const e=new Date(d.getTime()+10*60000),f=x=>x.getFullYear()+pad(x.getMonth()+1)+pad(x.getDate())+'T'+pad(x.getHours())+pad(x.getMinutes())+'00';
+  const url=location.href.split('#')[0],now=new Date().toISOString().replace(/[-:]/g,'').slice(0,15)+'Z';
+  return['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//IFA Oils//ZH','CALSCALE:GREGORIAN','BEGIN:VEVENT','UID:ifa-oils-daily@local','DTSTAMP:'+now,'DTSTART:'+f(d),'DTEND:'+f(e),'RRULE:FREQ=DAILY','SUMMARY:背精油 5 分鐘','DESCRIPTION:打開 IFA 精油背誦做今天的挖空題\\n'+url,'URL:'+url,'BEGIN:VALARM','TRIGGER:PT0M','ACTION:DISPLAY','DESCRIPTION:該背精油了','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
+}
+function viewSet(root){
+  root.append(header('設定','提醒 · 難度 · 備份'));
+  root.append(setRow('題庫',segSet('pool',[['all','精油＋植物油'],['ess','只有精油'],['carrier','只有植物油']]),'植物油只考學名、英文名、萃取部位、科屬（表格沒有萃取方法與成分類型）。'));
+  root.append(setRow('每日題數',segSet('perDay',[[5,'5'],[8,'8'],[12,'12']])));
+  root.append(setRow('每張挖空欄位數',segSet('blanks',[[2,'2'],[3,'3'],[4,'4']]),'每天、每支精油挖的欄位都不同。修改後，今天還沒作答的題目會立刻套用。'));
+  root.append(setRow('非學名欄位的作答方式',segSet('input',[['chips','點選項'],['type','手打']])));
+  root.append(setRow('拉丁學名難度',segSet('latin',[['auto','自動'],[1,'L1'],[2,'L2'],[3,'L3'],[4,'L4'],[5,'L5']],()=>{lpCur=null;render();}),'自動：每支精油／植物油各自升降級（答對升一級，答錯降一級）。L1 缺 1 字母 → L2 缺 1/4 → L3 缺一半 → L4 只給首字母 → L5 完整默寫'));
+  root.append(setRow('每支各自的等級',el('div',{class:'btns',style:'margin-top:0'},el('button',{class:'btn ghost',type:'button',onclick:()=>{S.latin={};S.en={};save();toast('全部等級已重設為 L1');}},'全部重設為 L1')),'自動模式下，每支精油／植物油的學名與英文名各自升降級；也可以到圖鑑展開單支，用 − ＋ 手動調整。'));
+  root.append(setRow('英文名難度',segSet('en',[['auto','自動'],[1,'L1'],[2,'L2'],[3,'L3'],[4,'L4'],[5,'L5']]),'自動：每支精油／植物油各自升降級。規則和學名相同：L1 缺 1 字母，L5 完整默寫（L5 可用提示，大小寫與標點寬鬆比對）。'));
+  root.append(setRow('發音',el('div',null,segSet('voice',[['en','英語化（植物學常用）'],['it','義式／教會拉丁']]),el('div',{style:'height:8px'}),segSet('slow',[[false,'一般速度'],[true,'慢速']])),'學名用這裡選的唸法；英文名一律用英語發音。使用手機內建語音，不同裝置聽起來略有差異。拼音裡的大寫為重音。'));
+  root.append(setRow('檢查後自動播放學名',segSet('auto',[[true,'開'],[false,'關']])));
+  const tm=el('input',{type:'time',id:'remind',value:S.set.remind,onchange:e=>{S.set.remind=e.target.value||'21:00';save();toast('提醒時間已儲存');}});
+  const icsBox=el('div',{class:'btns'},el('button',{class:'btn',type:'button',onclick:()=>{
+    try{const blob=new Blob([buildICS(S.set.remind)],{type:'text/calendar'});const a=el('a',{href:URL.createObjectURL(blob),download:'每日背精油提醒.ics'});document.body.append(a);a.click();a.remove();toast('已產生提醒檔，打開後加入行事曆');}catch(e){toast('這裡無法下載，請改在手機瀏覽器開啟網址');}}},'下載每日提醒（.ics）'));
+  root.append(setRow('每日提醒',el('div',null,tm,icsBox),'下載後用行事曆開啟，會建立每天重複並響鈴的事件。若點了沒反應，請在手機瀏覽器開啟本頁網址再試。'));
+  const ta=el('textarea',{id:'bk','aria-label':'備份資料'});
+  root.append(setRow('備份與換裝置',el('div',null,ta,el('div',{class:'btns'},
+    el('button',{class:'btn ghost',type:'button',onclick:()=>{ta.value=JSON.stringify(S);ta.select();try{navigator.clipboard.writeText(ta.value).then(()=>toast('已複製備份'),()=>toast('請手動複製文字框內容'));}catch(e){toast('請手動複製文字框內容');}}},'匯出（複製）'),
+    el('button',{class:'btn ghost',type:'button',onclick:()=>{try{const x=JSON.parse(ta.value);if(!x.card||!x.set)throw 0;S=Object.assign({},DEF,x);S.set=Object.assign({},DEF.set,x.set);save();toast('已匯入');render();}catch(e){toast('格式不正確');}}},'匯入'))),'進度只存在這個瀏覽器，換手機前先匯出。'));
+  let armed=false;const rb=el('button',{class:'btn ghost',type:'button',onclick:()=>{if(!armed){armed=true;rb.textContent='再按一次確認清除所有進度';return;}S=JSON.parse(JSON.stringify(DEF));save();toast('已重設');render();}},'重設進度');
+  root.append(setRow('重設',rb));
+  root.append(el('div',{class:'btns'},el('button',{class:'btn block',type:'button',onclick:()=>{tab='today';render();window.scrollTo(0,0);toast('設定已套用');}},'完成，回到今日')));
+  root.append(el('p',{class:'muted'},'每改一項都會自動儲存，不需要另外按儲存。'));
+}
+
+const compShort=o=>o.comp&&o.comp.length?o.comp.map(c=>c[0]).join('、'):'';
+function compBlock(o){return el('div',null,el('ul',{class:'comp'},...o.comp.map(([z,e])=>el('li',null,z,el('small',null,' '+e)))),
+  el('span',{class:'tag'+(o.compV?'':' oil')},o.compV?'已查證':'教材常見'),
+  o.compNote?el('div',{class:'note'},o.compNote):null,
+  o.compV?null:el('div',{class:'note'},'依常見芳療教材整理，尚未逐筆查文獻；實際比例隨產地與批次不同。'));}
+function faBlock(o){return el('div',null,
+  o.fa.length?el('ul',{class:'comp'},...o.fa.map(([z,e,p])=>el('li',null,z,el('small',null,' '+e+' · '),p))):null,
+  el('span',{class:'tag'+(o.faV?'':' oil')},o.faV?'已查證':'教材常見'),
+  o.faNote?el('div',{class:'note'},o.faNote):null,
+  o.faV?el('div',{class:'note'},'脂肪酸比例隨品種、產地、榨油法而異，以上為文獻範圍或代表值。'):el('div',{class:'note'},'依常見芳療教材整理，尚未逐筆查文獻。'));}
+/* ---------- 芳療諮詢練習 ---------- */
+const TYPES=[
+ {k:'單萜烯',fx:'氣味輕揚明亮，多為前調；常見於針葉與柑橘。偏向提振、淨化空氣、抗菌。',cau:'容易氧化，開封後要避光保存；可能刺激皮膚與黏膜。壓榨柑橘類（如佛手柑、萊姆、檸檬）要確認光敏性。'},
+ {k:'倍半萜烯',fx:'分子較大，氣味沉穩持久。常見作用是舒緩發炎、安撫肌膚與神經。',cau:'一般相對溫和；但樹脂與根類氣味濃重，容易讓整體處方偏重。'},
+ {k:'單萜醇',fx:'溫和而廣泛，常用於抗菌、調節免疫與情緒平衡，適用族群較廣。',cau:'整體偏溫和，但個別精油仍有年齡或體質限制（例如胡椒薄荷不近嬰幼兒臉部）。'},
+ {k:'倍半萜醇',fx:'氣味溫潤厚實，常用於安撫、滋補，多用在情緒與皮膚保養。',cau:'一般溫和；留意來源與永續性（例如印度檀香屬稀有物種）。'},
+ {k:'單萜酮',fx:'常見於化痰與促進傷口、疤痕癒合的用途；氣味穿透力強。',cau:'有神經毒性疑慮，孕婦、嬰幼兒、癲癇患者要避免或極度謹慎；不宜長期使用。各精油風險差很多，要逐支確認。'},
+ {k:'氧化物',fx:'主要作用在呼吸道：化痰、袪痰、通鼻；氣味清涼。',cau:'嬰幼兒與氣喘族群要特別小心，不近臉部；也可能刺激皮膚與黏膜。'},
+ {k:'醛',fx:'多帶檸檬或草本香氣；常見作用是抗菌、抗發炎、鎮靜。',cau:'容易刺激皮膚與致敏，需低濃度並先做皮膚測試；易氧化。'},
+ {k:'酯',fx:'氣味柔和，偏花香果香。鎮靜、放鬆、抗痙攣，是壓力與睡眠諮詢最常用的類型。',cau:'是最溫和的類型之一；仍要確認過敏史與個人偏好。'},
+ {k:'酚',fx:'強效抗菌、抗感染，也用來提振免疫與暖身。',cau:'皮膚與黏膜刺激強，可能傷肝；只適合低濃度、短期使用。孕婦、嬰幼兒與肝臟疾病者避免。'},
+ {k:'醚',fx:'常見於抗痙攣、助消化與安撫；多帶溫暖甜香。',cau:'部分成分需要留意，孕期與長期使用要保守，兒童依品項而定。'},
+ {k:'苯基酯',fx:'多為花香與樹脂香，用於安撫情緒、抗憂鬱與感官調香。',cau:'多為溶劑萃取的原精，留意致敏與品質；價格高，常以低比例使用。'},
+ {k:'芳香酯',fx:'多為甜香的樹脂香，用於安撫情緒、暖身與定香。',cau:'多為溶劑萃取，留意致敏與品質；黏稠，使用前要稀釋或加溫處理。'}
+];
+const TM={};TYPES.forEach(t=>TM[t.k]=t);
+const FLOW=['了解需求與病史（含用藥、孕期、過敏、生活習慣）','確認安全與禁忌，必要時轉介醫師','選 1 支主油加 1 到 2 支輔油，說明理由','選基底油與使用方式（擴香、按摩、泡澡、塗抹）','設定濃度，約定追蹤時間與回饋方式'];
+const SAFE=['懷孕或哺乳','嬰幼兒與兒童','癲癇、慢性疾病或正在用藥','皮膚敏感與過敏史（含堅果過敏）','光敏性（壓榨柑橘類）','寵物同住','症狀持續或加重，需要轉介醫師'];
+const CASES=[
+ {id:'c1',t:'壓力大、入睡困難的上班族',sc:'32 歲上班族，工作壓力大，近一個月躺下後兩小時才睡著，白天容易疲倦。沒有慢性病，偶爾喝酒。想要睡前使用的複方。',
+  safe:['確認是否正在服用助眠或鎮靜藥物','詢問過敏史與皮膚狀況','說明睡眠困擾持續或惡化要就醫','提醒睡前飲酒時避開某些鎮靜類精油'],
+  dir:'以酯類與單萜醇為主，例如真正薰衣草、羅馬洋甘菊，搭配一點柑橘類柔化氣味。使用方式優先考慮睡前擴香或低濃度的後頸與胸口按摩，並選擇溫和的基底油。',
+  fu:'兩週內記錄入睡時間與夜醒次數，看氣味偏好是否需要調整。'},
+ {id:'c2',t:'感冒初期鼻塞，家裡有 3 歲孩子',sc:'35 歲媽媽，家人感冒初期鼻塞，想在家中擴香。家裡有一位 3 歲孩子，白天會在客廳玩。',
+  safe:['確認孩子年齡，避免含高比例氧化物與薄荷腦的精油靠近孩子','擴香要短時間、通風，不整夜擴香','不把精油塗在孩子臉部或胸口','說明發燒、呼吸急促等警訊要就醫'],
+  dir:'以溫和、低量為原則，優先考慮甜橙、真正薰衣草這類較柔和的選擇；成人想用氧化物類精油，建議在孩子不在的空間使用。',
+  fu:'隔天詢問成人與孩子有無咳嗽、流淚或不適，有不適就停用。'},
+ {id:'c3',t:'久坐肩頸僵硬，想要按摩油',sc:'28 歲設計師，每天久坐十小時，肩頸僵硬。皮膚正常，對堅果過敏，想要睡前按摩用的油。',
+  safe:['堅果過敏要避開甜杏仁油、榛果油、昆士蘭堅果等基底油','確認高血壓、孕期與是否在服用抗凝血藥','皮膚破損或發炎處不使用','麻木、放射痛等神經症狀要轉介'],
+  dir:'可考慮單萜醇與酯類（如甜馬鬱蘭、薰衣草），想要溫熱感可加少量黑胡椒或薑。基底油選荷荷芭、葵花或山茶花籽油這類非堅果類。',
+  fu:'一週後詢問僵硬程度和皮膚反應，再調整香氣與濃度。'},
+ {id:'c4',t:'乾性敏感肌，想要臉部保養油',sc:'26 歲女性，臉頰容易泛紅脫皮，換季更明顯。沒有確診的皮膚病，想要晚間用的臉部保養油。',
+  safe:['臉部用的濃度要比身體更低','先做貼膚測試','避開酚、醛與容易氧化的柑橘類壓榨油','已有確診皮膚病要先請醫師評估'],
+  dir:'選用溫和的酯類與單萜醇，例如薰衣草、羅馬洋甘菊、天竺葵；基底油以荷荷芭、杏桃仁、山茶花籽、玫瑰果這類皮膚親和的為主。',
+  fu:'前兩週每週回報泛紅與乾燥狀況，有不適立即停用。'},
+ {id:'c5',t:'孕期焦慮，想使用精油',sc:'30 歲孕婦，目前孕 14 週，因工作與身體變化感到焦慮，想用精油放鬆。',
+  safe:['先確認孕週並建議與產科醫師討論','孕期要非常保守，酮、酚、部分醚類避免','只考慮擴香或極低濃度，且短時間','焦慮明顯影響生活要轉介專業協助'],
+  dir:'這題的重點是界定範圍與轉介。可以先建議非精油的放鬆方式（呼吸、手法按摩加基底油），若要使用精油，也只用最溫和、最低量的選擇，並請醫師同意。',
+  fu:'每次使用前都確認身體狀況，有任何不適立即停用。'},
+ {id:'c6',t:'70 歲長輩，服用降血壓藥，想助眠',sc:'70 歲男性，長期服用降血壓藥，近來淺眠，想嘗試精油。皮膚較薄，嗅覺不如以前靈敏。',
+  safe:['藥物與精油的交互作用要先和醫師或藥師確認','皮膚較薄，濃度要更低','嗅覺減退容易不自覺用過量','鎮靜類使用後要留意夜間跌倒風險'],
+  dir:'選用溫和的酯類，以擴香或低濃度外用；避免刺激性強的氧化物與酚類。處方要簡單，一支主油加一支輔油就好。',
+  fu:'一週內詢問睡眠與血壓有無異常，有變化請回診。'},
+ {id:'c7',t:'經前情緒起伏',sc:'34 歲女性，每次經前一週情緒低落、容易煩躁，想要放鬆用的香氛。沒有特殊病史。',
+  safe:['詢問荷爾蒙相關病史，有病史者要請醫師同意','具雌激素樣作用的精油（如快樂鼠尾草、茴香）要留意','確認是否懷孕或備孕','情緒症狀嚴重要轉介'],
+  dir:'可考慮天竺葵、玫瑰、薰衣草這類單萜醇與酯類，搭配柑橘類提升心情。以擴香與低濃度外用為主。',
+  fu:'記錄兩個週期的情緒變化，再決定是否調整配方。'},
+ {id:'c8',t:'運動後肌肉痠痛',sc:'40 歲運動愛好者，跑步後小腿痠痛。沒有受傷，想要運動後的按摩油。',
+  safe:['確認不是扭傷、拉傷或挫傷，有受傷請就醫','開放性傷口不使用','詢問抗凝血藥與皮膚過敏','山金車浸泡油不使用在破皮處'],
+  dir:'以單萜醇與酯類為主，可加一點黑胡椒或薑增加溫熱感；基底油可考慮山金車浸泡油，搭配荷荷芭或葵花油調整質地。',
+  fu:'三天後詢問痠痛是否緩解、皮膚有無反應。'},
+ {id:'c9',t:'家裡有貓，想要居家擴香',sc:'29 歲女性，家裡養一隻貓，想在客廳擴香除味。貓平常會在客廳活動。',
+  safe:['先確認寵物種類，貓的代謝特別敏感','避免含酚類或高比例單萜烯的精油在貓能接觸的空間擴香','擴香要通風，讓寵物可以離開','不把精油塗在寵物身上，有疑慮要詢問獸醫'],
+  dir:'這題的重點是風險管理。比較保守的做法是減少擴香、縮短時間，或只在寵物進不去的空間使用；不要把家中所有精油都當成同樣安全。',
+  fu:'留意貓的行為與食慾，有流口水、嘔吐或精神差要立刻停用並就醫。'},
+ {id:'c10',t:'國小孩子考前緊張',sc:'8 歲孩子即將考試，常說肚子不舒服、睡不好。家長想用精油幫忙放鬆。',
+  safe:['兒童濃度要比成人更低，需家長同意','確認過敏史與氣喘','不使用薄荷類精油近臉','持續的腹痛與睡眠問題要建議就醫'],
+  dir:'選用溫和香氣，例如甜橙、真正薰衣草或羅馬洋甘菊，以短時間擴香為主。可以搭配呼吸遊戲，讓孩子自己選喜歡的味道。',
+  fu:'一週內詢問睡前狀態與孩子對氣味的反應，不喜歡就換。'}
+];
+let proMode='quiz',pqCur=null,pqStat={n:0,ok:0};
+function chipPick(opts){
+  let sel=null;const slot=el('button',{class:'slot',type:'button'},'');const chips=el('div',{class:'chips'});
+  opts.forEach(v=>chips.append(el('button',{class:'chip',type:'button',onclick:()=>{sel=v;paint();}},v)));
+  slot.addEventListener('click',()=>{sel=null;paint();});
+  function paint(){slot.textContent=sel||'點下方選項填入';slot.classList.toggle('filled',!!sel);[...chips.children].forEach(c=>c.classList.toggle('on',c.textContent===sel));}
+  paint();
+  return{node:el('div',null,slot,chips),get:()=>sel,lock(){slot.disabled=true;chips.hidden=true;}};
+}
+function typeBlock(t,o,all){
+  const same=D.filter(x=>x.kind==='ess'&&x.type===t.k&&(!o||x.id!==o.id));
+  const head=[el('h3',null,t.k+'類'),el('div',null,el('b',null,'常見作用　'),t.fx),el('div',{style:'margin-top:6px'},el('b',null,'要注意　'),t.cau)];
+  if(all)return el('div',{class:'ref'},...head,el('h3',{class:'sub'},'這一類的精油（'+same.length+' 支）'),
+    el('ul',{class:'oil-list'},...same.map(x=>el('li',null,el('div',{class:'oli'},el('span',null,x.zh),el('span',{class:'lat sm'},x.latin[0])),el('div',{class:'note',style:'margin:0'},compShort(x))))));
+  return el('div',{class:'ref'},...head,same.length?el('div',{class:'note'},'同類型的精油：'+same.slice(0,8).map(x=>x.zh).join('、')+(same.length>8?' 等 '+same.length+' 支（完整清單在「類型卡片」）':'')):null);
+}
+function proQuiz(root){
+  const P=D.filter(o=>o.kind==='ess');
+  if(!pqCur)pqCur={o:P[Math.floor(Math.random()*P.length)]};
+  const o=pqCur.o;
+  const card=el('section',{class:'card sec'});
+  card.append(el('div',{class:'card-h'},el('span',null,'已答 '+pqStat.n+' · 答對 '+pqStat.ok),el('span',null,o.family)));
+  card.append(el('div',{class:'name'},o.zh),el('div',{class:'cue'},o.latin[0]+'　'+o.en));
+  const pick=chipPick(shuffle(TYPES.map(t=>t.k),Math.random));
+  const row=el('div',{class:'row'},el('div',{class:'lab'},'主要成分類型'),el('div',{class:'val'},pick.node));
+  const fb=el('div',{class:'fb'});row.append(fb);card.append(row);
+  const act=el('div',{class:'btns'});
+  const chk=el('button',{class:'btn block',type:'button'},'檢查答案');
+  chk.addEventListener('click',()=>{
+    const ok=pick.get()===o.type;pick.lock();row.classList.add(ok?'ok':'bad');pqStat.n++;if(ok)pqStat.ok++;
+    fb.textContent=ok?'正確':'正解：'+o.type;
+    card.append(typeBlock(TM[o.type],o));
+    if(o.comp&&o.comp.length)card.append(el('div',{class:'note'},'主要成分：'+compShort(o)));
+    if(o.note)card.append(el('div',{class:'note'},'備註：'+o.note));
+    chk.remove();act.append(el('button',{class:'btn block',type:'button',onclick:()=>{pqCur=null;render();}},'下一支'));
+  });
+  act.append(chk);card.append(act);root.append(card);
+}
+function proTypes(root){
+  const list=el('div',{class:'lib sec'});
+  TYPES.forEach(t=>{
+    const n=D.filter(o=>o.kind==='ess'&&o.type===t.k).length;
+    const b=el('div',{class:'lib-b',hidden:true},typeBlock(t,null,true));
+    const h=el('button',{class:'lib-h',type:'button','aria-expanded':'false',onclick:()=>{b.hidden=!b.hidden;h.setAttribute('aria-expanded',String(!b.hidden));}},el('span',{class:'z'},t.k),el('span',{class:'muted'},n+' 支'));
+    list.append(el('div',{class:'lib-i'},h,b));
+  });
+  root.append(list);
+}
+function caseSave(id){S.cases[id]=S.cases[id]||{text:'',ck:{}};return S.cases[id];}
+function proCases(root){
+  const intro=el('div',{class:'sec'},el('h2',null,'諮詢五步驟'),el('ol',{style:'margin:0;padding-left:22px'},...FLOW.map(x=>el('li',null,x))),
+    el('h2',{style:'margin-top:18px'},'通用安全檢查'),el('div',{class:'muted'},SAFE.join('、')));
+  root.append(intro);
+  const list=el('div',{class:'lib sec'});
+  CASES.forEach((c,i)=>{
+    const st=caseSave(c.id);
+    const done=(st.text||'').trim().length>0;
+    const body=el('div',{class:'lib-b',hidden:true});
+    const ta=el('textarea',{class:'pad',id:'case-'+c.id,placeholder:'寫下你的處方：主油、輔油、基底油、使用方式、為什麼這樣選',value:st.text||'','aria-label':'你的處方'});
+    ta.value=st.text||'';
+    ta.addEventListener('input',()=>{st.text=ta.value;save();mark.textContent=ta.value.trim()?'已寫':'';});
+    const ref=el('div',{class:'ref',hidden:true},el('h3',null,'參考方向'),el('div',null,c.dir),el('div',{class:'note'},'追蹤：'+c.fu),el('div',{class:'note'},'這只是練習用的方向，實際處方與濃度請依你的 IFA 教材與個案狀況決定。'));
+    const cks=el('div',null,...c.safe.map((s,k)=>{const cb=el('input',{type:'checkbox',id:'ck-'+c.id+'-'+k});cb.checked=!!st.ck[k];
+      cb.addEventListener('change',()=>{st.ck[k]=cb.checked;save();});return el('label',{class:'ck',for:'ck-'+c.id+'-'+k},cb,el('span',null,s));}));
+    body.append(el('p',null,c.sc),el('h3',{class:'sub'},'先寫下你的處方'),ta,el('h3',{class:'sub'},'你的處方有顧到這些安全點嗎？'),cks,
+      el('div',{class:'btns'},el('button',{class:'btn',type:'button',onclick:()=>{ref.hidden=!ref.hidden;}},'看參考方向')),ref);
+    const mark=el('span',{class:'tag'},done?'已寫':'');
+    const h=el('button',{class:'lib-h',type:'button','aria-expanded':'false',onclick:()=>{body.hidden=!body.hidden;h.setAttribute('aria-expanded',String(!body.hidden));}},el('span',{class:'z'},'案例 '+(i+1)+'　'+c.t),mark);
+    list.append(el('div',{class:'lib-i'},h,body));
+  });
+  root.append(list);
+}
+function viewPro(root){
+  root.append(header('芳療諮詢練習','成分類型 · 案例 · 安全'));
+  root.append(el('p',{class:'muted'},'內容是一般教科書常見的歸納，不含任何劑量數字，請與你的 IFA 教材對照。'));
+  const seg=el('div',{class:'seg'});
+  [['quiz','猜成分類型'],['types','類型卡片'],['cases','諮詢案例']].forEach(([v,l])=>seg.append(el('button',{type:'button',class:proMode===v?'on':'',onclick:()=>{proMode=v;pqCur=null;render();}},l)));
+  root.append(seg);
+  ({quiz:proQuiz,types:proTypes,cases:proCases})[proMode](root);
+}
+
+/* ---------- shell ---------- */
+const SPRIG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c.3-5 .2-10 0-16"/><path d="M12 8c-3 0-4.5-1.6-5-4 3 0 4.8 1.4 5 4zM12 12c3 0 4.6-1.5 5.2-4-3.200 0-5 1.500-5.200 4zM12 16c-3 0-4.600-1.500-5.200-4 3.200 0 5 1.500 5.200 4z"/></svg>';
+const ICONS={today:'<path d="M6 4.6c3-.9 9-.7 12 .1l-.5 14.7c-3 .9-8.5.8-11.4 0z"/><path d="M9 9.2c2-.4 4-.3 6 0M9 13.1c2-.3 4.200-.3 6.200.1"/>',latin:'<path d="M5 19.200C4.800 10 10 5 19.200 4.800c.2 9.200-5 14.400-14.200 14.400z"/><path d="M5 19.200c3-4.200 6-7 10-9.200"/>',lib:'<path d="M10 3.200h4v3c2 1.500 3 3 3 5.500V19c0 1.100-.7 2-2 2H9c-1.300 0-2-.9-2-2v-7.300c0-2.600 1-4.200 3-5.500z"/><path d="M8.800 13.300c2.200 1.200 4.200-1.200 6.400 0"/>',pro:'<path d="M12 20.200s-7.200-4.400-7.200-10.200a4.100 4.100 0 0 1 7.200-2.600 4.100 4.100 0 0 1 7.200 2.600c0 5.800-7.200 10.200-7.200 10.200z"/><path d="M12 9.500v5M9.600 12h4.800"/>',set:'<circle cx="12" cy="12" r="3.200"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.600 5.600l2.100 2.100M16.300 16.300l2.100 2.100M18.400 5.600l-2.100 2.100M7.700 16.300l-2.100 2.100"/>'};
+const TABS=[['today','今日'],['latin','學名'],['pro','芳療'],['lib','圖鑑'],['set','設定']];
+function render(){
+  const app=$('#app');app.textContent='';
+  ({today:viewToday,latin:viewLatin,pro:viewPro,lib:viewLib,set:viewSet})[tab](app);
+  const nav=$('#tabs');nav.textContent='';
+  TABS.forEach(([k,l])=>nav.append(el('button',{type:'button',class:tab===k?'on':'','aria-current':tab===k?'page':null,onclick:()=>{if('speechSynthesis' in window)speechSynthesis.cancel();tab=k;render();window.scrollTo(0,0);}},
+    el('span',{html:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICONS[k]+'</svg>'}),l)));
+}
+let lastDay=todayStr();
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&todayStr()!==lastDay){lastDay=todayStr();render();}});
+try{if('serviceWorker' in navigator&&/^https?:/.test(location.protocol))navigator.serviceWorker.register('sw.js').catch(()=>{});}catch(e){}
+render();
+})();
+</script>
+</body></html>
