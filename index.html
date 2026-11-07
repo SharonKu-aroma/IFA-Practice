@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#4F3F86"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="精油小圖鑑"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png"><title>精油小圖鑑</title>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#4F3F86"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="精油小學堂"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="apple-touch-icon.png"><title>精油小學堂</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -528,7 +528,7 @@ function buildICS(time){
   const [h,m]=time.split(':').map(Number),d=new Date();d.setHours(h,m,0,0);if(d<new Date())d.setDate(d.getDate()+1);
   const e=new Date(d.getTime()+10*60000),f=x=>x.getFullYear()+pad(x.getMonth()+1)+pad(x.getDate())+'T'+pad(x.getHours())+pad(x.getMinutes())+'00';
   const url=location.href.split('#')[0],now=new Date().toISOString().replace(/[-:]/g,'').slice(0,15)+'Z';
-  return['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//IFA Oils//ZH','CALSCALE:GREGORIAN','BEGIN:VEVENT','UID:ifa-oils-daily@local','DTSTAMP:'+now,'DTSTART:'+f(d),'DTEND:'+f(e),'RRULE:FREQ=DAILY','SUMMARY:精油小圖鑑 5 分鐘','DESCRIPTION:打開 IFA 精油背誦做今天的挖空題\\n'+url,'URL:'+url,'BEGIN:VALARM','TRIGGER:PT0M','ACTION:DISPLAY','DESCRIPTION:該背精油了','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
+  return['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//IFA Oils//ZH','CALSCALE:GREGORIAN','BEGIN:VEVENT','UID:ifa-oils-daily@local','DTSTAMP:'+now,'DTSTART:'+f(d),'DTEND:'+f(e),'RRULE:FREQ=DAILY','SUMMARY:精油小學堂 5 分鐘','DESCRIPTION:打開 IFA 精油背誦做今天的挖空題\\n'+url,'URL:'+url,'BEGIN:VALARM','TRIGGER:PT0M','ACTION:DISPLAY','DESCRIPTION:該背精油了','END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
 }
 function viewSet(root){
   root.append(header('設定','提醒 · 難度 · 備份'));
